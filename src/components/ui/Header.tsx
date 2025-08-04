@@ -1,5 +1,4 @@
 import Image from "next/image";
-import { useState } from "react";
 import logo from "@/assets/images/taxadvin-logo.png";
 import { HeaderNav } from "./HeaderNav";
 

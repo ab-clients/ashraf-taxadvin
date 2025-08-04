@@ -1,5 +1,4 @@
 import { ConsultationCTASection } from "@/components/pages/home/ConsultationCTASection";
-import { ContactUsSection } from "@/components/pages/home/ContactUsSection";
 import { HeroSection } from "@/components/pages/home/HeroSection";
 import { PricingSection } from "@/components/pages/home/PricingSection";
 import { ResourceHubSection } from "@/components/pages/home/ResourceHubSection";

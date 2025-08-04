@@ -1,6 +1,5 @@
 import {
   HiOutlineCalendar,
-  HiOutlineClipboardCheck,
   HiOutlineReceiptTax,
   HiOutlineMailOpen,
 } from "react-icons/hi";

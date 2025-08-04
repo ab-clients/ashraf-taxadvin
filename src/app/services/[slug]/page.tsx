@@ -1,13 +1,11 @@
 import { serviceDetails } from "@/data/home/servcies";
-import Link from "next/link";
 import { notFound } from "next/navigation";
 import { HiArrowLeft } from "react-icons/hi";
+import Link from "next/link";
 
-type Params = {
-  params: {
-    slug: string;
-  };
-};
+interface PageProps {
+  params: Promise<{ slug: string }>;
+}
 
 export async function generateStaticParams() {
   return serviceDetails.map((service) => ({
@@ -15,8 +13,9 @@ export async function generateStaticParams() {
   }));
 }
 
-export default function ServiceDetailPage({ params }: Params) {
-  const service = serviceDetails.find((s) => s.slug === params.slug);
+export default async function ServiceDetailPage({ params }: PageProps) {
+  const { slug } = await params;
+  const service = serviceDetails.find((s) => s.slug === slug);
 
   if (!service) return notFound();
 
