@@ -1,5 +1,5 @@
 // app/services/page.tsx
-import { serviceDetails } from "@/data/home/servcies";
+import { serviceDetails } from "@/data/servcies";
 import Link from "next/link";
 
 export default function ServicesPage() {

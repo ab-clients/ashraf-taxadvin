@@ -1,5 +1,7 @@
 import { ConsultationCTASection } from "@/components/pages/home/ConsultationCTASection";
+import { FaqSection } from "@/components/pages/home/FaqSection";
 import { HeroSection } from "@/components/pages/home/HeroSection";
+import { HowItWorksSection } from "@/components/pages/home/HowItWorksSection";
 import { PricingSection } from "@/components/pages/home/PricingSection";
 import { ResourceHubSection } from "@/components/pages/home/ResourceHubSection";
 import { ServicesSection } from "@/components/pages/home/ServicesSection";
@@ -13,10 +15,12 @@ export default function Home() {
       <WhyChooseUsSection />
       <ServicesSection />
       <TestimonialsSection />
-      {/* <ContactUsSection /> */}
-      <PricingSection />
+      {/* <PricingSection /> */}
+      {/* <HowItWorksSection /> */}
+      <FaqSection />
       <ResourceHubSection />
       <ConsultationCTASection />
+      {/* <ContactUsSection /> */}
     </div>
   );
 }

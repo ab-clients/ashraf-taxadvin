@@ -1,4 +1,4 @@
-import { serviceDetails } from "@/data/home/servcies";
+import { serviceDetails } from "@/data/servcies";
 
 export const ServicesSection = () => {
   const filteredServices = serviceDetails.filter(

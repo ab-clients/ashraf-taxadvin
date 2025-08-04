@@ -1,4 +1,4 @@
-import { serviceDetails } from "@/data/home/servcies";
+import { serviceDetails } from "@/data/servcies";
 import { notFound } from "next/navigation";
 import { HiArrowLeft } from "react-icons/hi";
 import Link from "next/link";
@@ -30,7 +30,9 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
       {service.sections.map((section, index) => (
         <div key={index} className="mb-6">
-          <h2 className="text-xl font-semibold mb-2">{section.heading}</h2>
+          <h2 className="text-xl font-semibold mb-2 text-gray-700 dark:text-gray-400">
+            {section.heading}
+          </h2>
           <p className="text-gray-700 dark:text-gray-200">{section.body}</p>
         </div>
       ))}
