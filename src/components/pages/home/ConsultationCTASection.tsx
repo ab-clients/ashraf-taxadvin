@@ -1,6 +1,6 @@
 export const ConsultationCTASection = () => (
   <section
-    className="relative overflow-hidden bg-sky-600 text-white py-16 px-6 lg:px-8"
+    className="relative overflow-hidden bg-sky-500 text-white dark:bg-gray-800 dark:text-gray-300 py-16 px-6 lg:px-8"
     aria-label="Schedule a Free Consultation"
   >
     {/* Background overlay (could be replaced with an <img> or <video>) */}
@@ -29,12 +29,19 @@ export const ConsultationCTASection = () => (
       </a>
 
       {/* Optional trust icons or secure assurances */}
-      <div className="mt-6 flex flex-wrap justify-center items-center gap-6 text-sm lg:text-base text-sky-100">
-        <span>✔ Licensed CPA & EA</span>
-        <span className="mx-2 lg:mx-4">|</span>
-        <span>✔ Virtual & In‑Office Visits</span>
-        <span className="mx-2 lg:mx-4">|</span>
-        <span>✔ Zero‑Obligation Booking</span>
+      <div className="mt-6 flex flex-wrap justify-center gap-3 sm:gap-4">
+        <div className="bg-blue-800/60 dark:bg-blue-900/80 text-sky-100 rounded-lg px-4 py-2 flex items-center shadow-sm min-w-[180px] justify-center shadow-gray-500 dark:shadow-gray-800 shadow-sm">
+          ✔ Licensed CPA
+        </div>
+        <div className="bg-blue-800/60 dark:bg-blue-900/80 text-sky-100 rounded-lg px-4 py-2 flex items-center shadow-sm min-w-[180px] justify-center shadow-gray=500 dark:shadow-gray-800 shadow-sm">
+          ✔ Virtual &amp; In‑Office Visits
+        </div>
+        <div className="bg-blue-800/60 dark:bg-blue-900/80 text-sky-100 rounded-lg px-4 py-2 flex items-center shadow-sm min-w-[180px] justify-center shadow-gray=500 dark:shadow-gray-800 shadow-sm">
+          ✔ Zero‑Obligation Booking
+        </div>
+        <div className="bg-blue-800/60 dark:bg-blue-900/80 text-sky-100 rounded-lg px-4 py-2 flex items-center shadow-sm min-w-[180px] justify-center shadow-gray=500 dark:shadow-gray-800 shadow-sm">
+          ✔ We speak Arabic • نتحدث العربية
+        </div>
       </div>
     </div>
   </section>

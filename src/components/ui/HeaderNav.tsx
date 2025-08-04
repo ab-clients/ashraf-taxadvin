@@ -37,7 +37,7 @@ export const HeaderNav = () => {
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden p-2 focus:outline-none"
+        className="md:hidden p-2 focus:outline-none text-gray-700 dark:text-gray-200 hover:text-sky-600 dark:hover:text-sky-400 transition"
         onClick={() => setIsMenuOpen((o) => !o)}
         aria-label={isMenuOpen ? "Close menu" : "Open menu"}
       >
