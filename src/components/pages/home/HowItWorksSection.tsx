@@ -25,9 +25,9 @@ export const HowItWorksSection: React.FC = () => (
       <div className="mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
         {/* Step 1 */}
         <div className="flex flex-col items-center space-y-4">
-          <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+          <div className="w-16 h-16 flex items-center justify-center rounded-full bg-sky-100 dark:bg-sky-900">
             <FaFileUpload
-              className="h-8 w-8 text-blue-600 dark:text-blue-300"
+              className="h-8 w-8 text-sky-600 dark:text-sky-300"
               aria-hidden="true"
             />
           </div>
@@ -42,9 +42,9 @@ export const HowItWorksSection: React.FC = () => (
 
         {/* Step 2 */}
         <div className="flex flex-col items-center space-y-4">
-          <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+          <div className="w-16 h-16 flex items-center justify-center rounded-full bg-sky-100 dark:bg-sky-900">
             <FaUserCheck
-              className="h-8 w-8 text-blue-600 dark:text-blue-300"
+              className="h-8 w-8 text-sky-600 dark:text-sky-300"
               aria-hidden="true"
             />
           </div>
@@ -59,9 +59,9 @@ export const HowItWorksSection: React.FC = () => (
 
         {/* Step 3 */}
         <div className="flex flex-col items-center space-y-4">
-          <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+          <div className="w-16 h-16 flex items-center justify-center rounded-full bg-sky-100 dark:bg-sky-900">
             <FaCreditCard
-              className="h-8 w-8 text-blue-600 dark:text-blue-300"
+              className="h-8 w-8 text-sky-600 dark:text-sky-300"
               aria-hidden="true"
             />
           </div>
@@ -76,9 +76,9 @@ export const HowItWorksSection: React.FC = () => (
 
         {/* Step 4 */}
         <div className="flex flex-col items-center space-y-4">
-          <div className="w-16 h-16 flex items-center justify-center rounded-full bg-blue-100 dark:bg-blue-900">
+          <div className="w-16 h-16 flex items-center justify-center rounded-full bg-sky-100 dark:bg-sky-900">
             <FaPaperPlane
-              className="h-8 w-8 text-blue-600 dark:text-blue-300"
+              className="h-8 w-8 text-sky-600 dark:text-sky-300"
               aria-hidden="true"
             />
           </div>
@@ -94,7 +94,7 @@ export const HowItWorksSection: React.FC = () => (
 
       <div className="mt-12">
         <Link href="/services" legacyBehavior>
-          <a className="inline-flex items-center px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-lg font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500">
+          <a className="inline-flex items-center px-8 py-4 bg-sky-600 hover:bg-sky-700 text-white rounded-md text-lg font-medium focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-sky-500">
             Learn More
           </a>
         </Link>

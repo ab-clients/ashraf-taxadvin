@@ -20,7 +20,7 @@ export default function ServicesPage() {
             data-aos="fade-up"
             data-aos-delay={`${((idx % 2) + 1) * 100}`}
           >
-            <service.icon className="text-blue-600 dark:text-blue-400 mt-1 w-24 h-24" />
+            <service.icon className="text-sky-600 dark:text-sky-400 mt-1 w-24 h-24" />
             <div>
               <h2 className="text-xl font-semibold">{service.title}</h2>
               <p className="text-gray-600 dark:text-gray-300 mt-1">
@@ -28,7 +28,7 @@ export default function ServicesPage() {
               </p>
               <Link
                 href={`/services/${service.slug}`}
-                className="text-blue-600 dark:text-blue-400 text-sm mt-2 inline-block"
+                className="text-sky-600 dark:text-sky-400 text-sm mt-2 inline-block"
               >
                 Learn more →
               </Link>

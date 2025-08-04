@@ -20,7 +20,7 @@ export const WhyChooseUsSection = () => {
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
-              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-blue-600/20 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 mb-4">
+              <div className="flex items-center justify-center w-16 h-16 rounded-full bg-sky-600/20 text-sky-700 dark:bg-sky-500/20 dark:text-sky-400 mb-4">
                 <Icon className="w-8 h-8" />
               </div>
               <h3 className="text-xl font-semibold mb-2">{title}</h3>

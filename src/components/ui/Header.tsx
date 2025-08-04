@@ -10,7 +10,7 @@ export const Header = () => {
           {/* Logo and Company Name */}
           <div className="flex items-center space-x-3">
             <Image src={logo} alt="TaxAdvin Logo" width={40} height={40} />
-            <span className="text-xl font-bold text-blue-700 dark:text-blue-400">
+            <span className="text-xl font-bold text-sky-700 dark:text-sky-400">
               TaxAdvin
             </span>
           </div>

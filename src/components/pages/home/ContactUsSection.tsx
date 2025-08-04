@@ -4,14 +4,14 @@ export const ContactUsSection = () => {
   return (
     <section
       id="contact"
-      className="py-16 px-6 lg:px-8 bg-blue-50 dark:bg-gray-900"
+      className="py-16 px-6 lg:px-8 bg-sky-50 dark:bg-gray-900"
     >
       <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 items-center">
         <div>
-          <h2 className="text-3xl sm:text-4xl font-bold text-blue-800 dark:text-blue-400">
+          <h2 className="text-3xl sm:text-4xl font-bold text-sky-800 dark:text-sky-400">
             Ready to get started?
           </h2>
-          <p className="mt-4 text-lg text-blue-700 dark:text-gray-300">
+          <p className="mt-4 text-lg text-sky-700 dark:text-gray-300">
             Contact us to schedule your free consultation or to learn more about
             how we can assist you. We look forward to partnering with you on
             your financial journey.
@@ -19,7 +19,7 @@ export const ContactUsSection = () => {
           <dl className="mt-8 space-y-4">
             <div className="flex items-center">
               <dt className="sr-only">Phone</dt>
-              <dd className="flex items-center text-blue-800 dark:text-blue-300">
+              <dd className="flex items-center text-sky-800 dark:text-sky-300">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -37,7 +37,7 @@ export const ContactUsSection = () => {
             </div>
             <div className="flex items-center">
               <dt className="sr-only">Email</dt>
-              <dd className="flex items-center text-blue-800 dark:text-blue-300">
+              <dd className="flex items-center text-sky-800 dark:text-sky-300">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -51,7 +51,7 @@ export const ContactUsSection = () => {
             </div>
             <div className="flex items-center">
               <dt className="sr-only">Address</dt>
-              <dd className="flex items-center text-blue-800 dark:text-blue-300">
+              <dd className="flex items-center text-sky-800 dark:text-sky-300">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   fill="currentColor"
@@ -86,7 +86,7 @@ export const ContactUsSection = () => {
                 type="text"
                 id="name"
                 name="name"
-                className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 px-3 py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 px-3 py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:focus:ring-sky-500"
                 placeholder="Your full name"
               />
             </div>
@@ -101,7 +101,7 @@ export const ContactUsSection = () => {
                 type="email"
                 id="email"
                 name="email"
-                className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 px-3 py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 px-3 py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:focus:ring-sky-500"
                 placeholder="you@example.com"
               />
             </div>
@@ -116,14 +116,14 @@ export const ContactUsSection = () => {
                 id="message"
                 name="message"
                 rows={4}
-                className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 px-3 py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-500"
+                className="mt-1 block w-full rounded-md border border-gray-300 dark:border-gray-600 px-3 py-2 bg-white dark:bg-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:focus:ring-sky-500"
                 placeholder="How can we help you?"
               />
             </div>
             <div>
               <button
                 type="submit"
-                className="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 dark:bg-blue-500 dark:hover:bg-blue-600 dark:focus:ring-blue-500"
+                className="w-full inline-flex justify-center items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-sky-600 hover:bg-sky-700 focus:outline-none focus:ring-2 focus:ring-sky-500 dark:bg-sky-500 dark:hover:bg-sky-600 dark:focus:ring-sky-500"
               >
                 Send Message
               </button>

@@ -27,7 +27,7 @@ export const ServicesSection = () => {
               data-aos="flip-up"
               data-aos-delay={idx * 100}
             >
-              <div className="flex items-center justify-center w-12 h-12 rounded-md bg-blue-600/20 text-blue-700 dark:bg-blue-500/20 dark:text-blue-400 mb-4 p-2">
+              <div className="flex items-center justify-center w-12 h-12 rounded-md bg-sky-600/20 text-sky-700 dark:bg-sky-500/20 dark:text-sky-400 mb-4 p-2">
                 <Icon className="w-full h-full" />
               </div>
               <h3 className="text-xl font-semibold mb-2">{title}</h3>

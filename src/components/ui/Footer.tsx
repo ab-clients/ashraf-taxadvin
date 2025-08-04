@@ -5,7 +5,7 @@ import logo from "@/assets/images/taxadvin-logo.png";
 
 export const Footer = () => {
   return (
-    <footer className="bg-blue-50 dark:bg-gray-950 text-gray-700 dark:text-gray-300 border-t border-gray-300 dark:border-gray-700">
+    <footer className="bg-sky-50 dark:bg-gray-950 text-gray-700 dark:text-gray-300 border-t border-gray-300 dark:border-gray-700">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
         {/* Top Section - 3 Columns */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 border-b border-gray-300 dark:border-gray-700 pb-8">
@@ -14,7 +14,7 @@ export const Footer = () => {
             <div className="w-12 md:w-16 lg:w-20">
               <Image src={logo} alt="TaxAdvin Logo" className="w-full h-auto" />
             </div>
-            <span className="text-2xl md:text-3xl font-bold text-blue-700 dark:text-blue-400">
+            <span className="text-2xl md:text-3xl font-bold text-sky-700 dark:text-sky-400">
               TaxAdvin
             </span>
           </div>
@@ -25,17 +25,17 @@ export const Footer = () => {
               Contact Us
             </h3>
             <p className="mb-2 flex items-center gap-2">
-              <FaPhoneAlt className="text-blue-600 dark:text-blue-400" />
+              <FaPhoneAlt className="text-sky-600 dark:text-sky-400" />
               (407) 726-7901
             </p>
             <p className="mb-2 flex items-center gap-2">
-              <FaEnvelope className="text-blue-600 dark:text-blue-400" />
+              <FaEnvelope className="text-sky-600 dark:text-sky-400" />
               <a href="mailto:contact@taxadvin.com" className="hover:underline">
                 contact@taxadvin.com
               </a>
             </p>
             <p className="flex items-start gap-2">
-              <FaMapMarkerAlt className="text-blue-600 dark:text-blue-400 mt-1" />
+              <FaMapMarkerAlt className="text-sky-600 dark:text-sky-400 mt-1" />
               <span>
                 13732 Eden Isle Blvd
                 <br />
@@ -53,7 +53,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="/"
-                  className="hover:text-blue-600 dark:hover:text-blue-400"
+                  className="hover:text-sky-600 dark:hover:text-sky-400"
                 >
                   Home
                 </Link>
@@ -61,7 +61,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="/about"
-                  className="hover:text-blue-600 dark:hover:text-blue-400"
+                  className="hover:text-sky-600 dark:hover:text-sky-400"
                 >
                   About Us
                 </Link>
@@ -69,7 +69,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="/services"
-                  className="hover:text-blue-600 dark:hover:text-blue-400"
+                  className="hover:text-sky-600 dark:hover:text-sky-400"
                 >
                   Services
                 </Link>
@@ -77,7 +77,7 @@ export const Footer = () => {
               <li>
                 <Link
                   href="/contact"
-                  className="hover:text-blue-600 dark:hover:text-blue-400"
+                  className="hover:text-sky-600 dark:hover:text-sky-400"
                 >
                   Contact
                 </Link>
@@ -94,7 +94,7 @@ export const Footer = () => {
               href="https://alybadawy.com"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-blue-600 dark:text-blue-400 hover:underline"
+              className="text-sky-600 dark:text-sky-400 hover:underline"
             >
               Aly Badawy
             </a>

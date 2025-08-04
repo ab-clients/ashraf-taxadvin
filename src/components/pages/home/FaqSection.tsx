@@ -47,10 +47,10 @@ export function FaqSection() {
   return (
     <section className="py-16 px-6 bg-white dark:bg-gray-900">
       <div className="max-w-2xl mx-auto">
-        <h2 className="text-2xl font-bold text-center mb-6 text-blue-700 dark:text-blue-200">
+        <h2 className="text-2xl font-bold text-center mb-6 text-sky-700 dark:text-sky-200">
           Frequently Asked Questions
         </h2>
-        <ul className="divide-y divide-blue-100 dark:divide-blue-900">
+        <ul className="divide-y divide-sky-100 dark:divide-sky-900">
           {faqs.map((faq, idx) => (
             <li key={idx}>
               <button
@@ -60,9 +60,9 @@ export function FaqSection() {
               >
                 <span className="font-medium">{faq.question}</span>
                 {open === idx ? (
-                  <FaChevronUp className="text-blue-600 dark:text-blue-300" />
+                  <FaChevronUp className="text-sky-600 dark:text-sky-300" />
                 ) : (
-                  <FaChevronDown className="text-blue-600 dark:text-blue-300" />
+                  <FaChevronDown className="text-sky-600 dark:text-sky-300" />
                 )}
               </button>
               {open === idx && (

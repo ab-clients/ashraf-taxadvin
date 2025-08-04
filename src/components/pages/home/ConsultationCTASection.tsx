@@ -1,12 +1,12 @@
 export const ConsultationCTASection = () => (
   <section
-    className="relative overflow-hidden bg-blue-600 text-white py-16 px-6 lg:px-8"
+    className="relative overflow-hidden bg-sky-600 text-white py-16 px-6 lg:px-8"
     aria-label="Schedule a Free Consultation"
   >
     {/* Background overlay (could be replaced with an <img> or <video>) */}
     <div
       aria-hidden="true"
-      className="absolute inset-0 bg-blue-800 opacity-80"
+      className="absolute inset-0 bg-sky-800 opacity-80"
     />
 
     <div className="relative max-w-4xl mx-auto flex flex-col items-center text-center">
@@ -23,13 +23,13 @@ export const ConsultationCTASection = () => (
       </p>
       <a
         href="/schedule"
-        className="mt-8 inline-block bg-blue-50 text-blue-900 font-semibold text-lg px-8 py-4 rounded-md hover:bg-blue-100 focus:ring-4 focus:ring-blue-300 transition"
+        className="mt-8 inline-block bg-sky-50 text-sky-900 font-semibold text-lg px-8 py-4 rounded-md hover:bg-sky-100 focus:ring-4 focus:ring-sky-300 transition"
       >
         Schedule Your Free Consultation
       </a>
 
       {/* Optional trust icons or secure assurances */}
-      <div className="mt-6 flex flex-wrap justify-center items-center gap-6 text-sm lg:text-base text-blue-100">
+      <div className="mt-6 flex flex-wrap justify-center items-center gap-6 text-sm lg:text-base text-sky-100">
         <span>✔ Licensed CPA & EA</span>
         <span className="mx-2 lg:mx-4">|</span>
         <span>✔ Virtual & In‑Office Visits</span>

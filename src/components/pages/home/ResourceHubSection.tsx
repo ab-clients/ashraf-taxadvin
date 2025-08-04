@@ -20,7 +20,7 @@ export const ResourceHubSection = () => (
           href="/tax-center/due-dates"
           className="flex flex-col items-center p-6 bg-white dark:bg-gray-900 rounded-lg shadow hover:shadow-lg"
         >
-          <HiOutlineCalendar className="w-10 h-10 text-blue-600 mb-4" />
+          <HiOutlineCalendar className="w-10 h-10 text-sky-600 mb-4" />
           <h3 className="font-semibold mb-2">Important Tax Deadlines</h3>
           <p className="text-sm text-gray-600 dark:text-gray-300">
             Never miss a filing or payment date again.
@@ -31,7 +31,7 @@ export const ResourceHubSection = () => (
           href="/tax-center/calculators"
           className="flex flex-col items-center p-6 bg-white dark:bg-gray-900 rounded-lg shadow hover:shadow-lg"
         >
-          <HiOutlineReceiptTax className="w-10 h-10 text-blue-600 mb-4" />
+          <HiOutlineReceiptTax className="w-10 h-10 text-sky-600 mb-4" />
           <h3 className="font-semibold mb-2">Tax & Budget Calculators</h3>
           <p className="text-sm text-gray-600 dark:text-gray-300">
             Estimate refund, credits, and manage expense budgets.
@@ -42,7 +42,7 @@ export const ResourceHubSection = () => (
           href="/newsletter"
           className="flex flex-col items-center p-6 bg-white dark:bg-gray-900 rounded-lg shadow hover:shadow-lg"
         >
-          <HiOutlineMailOpen className="w-10 h-10 text-blue-600 mb-4" />
+          <HiOutlineMailOpen className="w-10 h-10 text-sky-600 mb-4" />
           <h3 className="font-semibold mb-2">Free Newsletter</h3>
           <p className="text-sm text-gray-600 dark:text-gray-300">
             Monthly tax tips, IRS updates, and money-saving advice.

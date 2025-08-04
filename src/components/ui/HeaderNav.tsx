@@ -23,7 +23,7 @@ export const HeaderNav = () => {
           <li key={item.href}>
             <Link
               href={item.href}
-              className="text-gray-700 dark:text-gray-200 hover:text-blue-600 dark:hover:text-blue-400 transition"
+              className="text-gray-700 dark:text-gray-200 hover:text-sky-600 dark:hover:text-sky-400 transition"
             >
               {item.label}
             </Link>

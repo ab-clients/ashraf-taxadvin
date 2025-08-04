@@ -21,7 +21,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
 
   return (
     <div className="max-w-4xl mx-auto px-6 py-16">
-      <h1 className="text-3xl font-bold mb-4 text-blue-700 dark:text-blue-400">
+      <h1 className="text-3xl font-bold mb-4 text-sky-700 dark:text-sky-400">
         {service.title}
       </h1>
       <p className="text-lg text-gray-600 dark:text-gray-300 mb-8">
@@ -41,7 +41,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       <div className="mt-10 text-right">
         <Link
           href="/services"
-          className="inline-flex items-center text-blue-700 dark:text-blue-400 hover:underline"
+          className="inline-flex items-center text-sky-700 dark:text-sky-400 hover:underline"
         >
           <HiArrowLeft className="mr-2 text-lg" />
           Back to our Services
