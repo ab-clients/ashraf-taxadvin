@@ -1,8 +1,5 @@
-import {
-  HiOutlineCalendar,
-  HiOutlineReceiptTax,
-  HiOutlineMailOpen,
-} from "react-icons/hi";
+import { HiOutlineCalendar, HiOutlineReceiptTax } from "react-icons/hi";
+import { NewsletterCard } from "./NewsletterCard";
 
 export const ResourceHubSection = () => (
   <section className="py-16 px-6 bg-gray-200 dark:bg-gray-800">
@@ -19,6 +16,7 @@ export const ResourceHubSection = () => (
         <a
           href="/tax-center/due-dates"
           className="flex flex-col items-center p-6 bg-white dark:bg-gray-900 rounded-lg shadow hover:shadow-lg"
+          data-aos="flip-up"
         >
           <HiOutlineCalendar className="w-10 h-10 text-sky-600 mb-4" />
           <h3 className="font-semibold mb-2">Important Tax Deadlines</h3>
@@ -26,10 +24,10 @@ export const ResourceHubSection = () => (
             Never miss a filing or payment date again.
           </p>
         </a>
-
         <a
           href="/tax-center/calculators"
           className="flex flex-col items-center p-6 bg-white dark:bg-gray-900 rounded-lg shadow hover:shadow-lg"
+          data-aos="flip-up"
         >
           <HiOutlineReceiptTax className="w-10 h-10 text-sky-600 mb-4" />
           <h3 className="font-semibold mb-2">Tax & Budget Calculators</h3>
@@ -37,23 +35,8 @@ export const ResourceHubSection = () => (
             Estimate refund, credits, and manage expense budgets.
           </p>
         </a>
-
-        <a
-          href="/newsletter"
-          className="flex flex-col items-center p-6 bg-white dark:bg-gray-900 rounded-lg shadow hover:shadow-lg"
-        >
-          <HiOutlineMailOpen className="w-10 h-10 text-sky-600 mb-4" />
-          <h3 className="font-semibold mb-2">Free Newsletter</h3>
-          <p className="text-sm text-gray-600 dark:text-gray-300">
-            Monthly tax tips, IRS updates, and money-saving advice.
-          </p>
-        </a>
+        <NewsletterCard />
       </div>
-      <p className="mt-8 text-sm text-gray-600 dark:text-gray-400">
-        Based on resource hubs seen on Florida firm websites like Professional
-        Tax Services—features include refund tracking, tax due dates,
-        calculators, and newsletter signup links
-      </p>
     </div>
   </section>
 );

@@ -18,7 +18,6 @@ export default function Home() {
       <FaqSection />
       <ResourceHubSection />
       <ConsultationCTASection />
-      {/* <ContactUsSection /> */}
     </div>
   );
 }
