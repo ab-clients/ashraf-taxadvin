@@ -12,7 +12,7 @@ export const VisionSection = () => {
         <p className="text-lg text-gray-700 dark:text-gray-300 mb-4">
           At TaxAdvin, we are excited to grow alongside our community. Our
           vision is to expand our team, extend our services and continually
-          adapt to meet the evolving needs of Florida's individuals, small
+          adapt to meet the evolving needs of Florida&apos;s individuals, small
           businesses and nonprofits.
         </p>
         <p className="text-lg text-gray-700 dark:text-gray-300">

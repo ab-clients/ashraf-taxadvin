@@ -17,16 +17,16 @@ export const MissionStatementSection = () => {
           present while taking a proactive approach to minimise tax burden,
           improve cash flows and assist with planning and succession. We believe
           that sustainable success stems from open communication, careful
-          analysis and personalised strategies. That's why we take the time to
-          understand your unique needs and goals before providing advice.
+          analysis and personalised strategies. That&apos;s why we take the time
+          to understand your unique needs and goals before providing advice.
         </p>
         <p className="text-lg text-gray-700 dark:text-gray-300">
           We are committed to the highest standards of excellence and
           professionalism. By staying current on tax laws and best practices and
           by planning ahead, we help you navigate complexity with confidence.
-          Whether you're an individual, small business or nonprofit, our goal is
-          to provide competent, timely guidance that supports your long-term
-          financial health.
+          Whether you&apos;re an individual, small business or nonprofit, our
+          goal is to provide competent, timely guidance that supports your
+          long-term financial health.
         </p>
       </div>
     </section>

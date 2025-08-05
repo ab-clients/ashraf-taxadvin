@@ -1,8 +1,6 @@
 import { ConsultationCTASection } from "@/components/pages/home/ConsultationCTASection";
 import { FaqSection } from "@/components/pages/home/FaqSection";
 import { HeroSection } from "@/components/pages/home/HeroSection";
-import { HowItWorksSection } from "@/components/pages/home/HowItWorksSection";
-import { PricingSection } from "@/components/pages/home/PricingSection";
 import { ResourceHubSection } from "@/components/pages/home/ResourceHubSection";
 import { ServicesSection } from "@/components/pages/home/ServicesSection";
 import { TestimonialsSection } from "@/components/pages/home/TestimonialsSection";
