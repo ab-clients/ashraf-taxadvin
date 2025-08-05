@@ -21,7 +21,7 @@ export const Footer = () => {
 
           {/* 2️⃣ Contact Info */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+            <h3 className="text-lg font-semibold text-sky-900 dark:text-sky-300 mb-3 italic ">
               Contact Us
             </h3>
             <p className="mb-2 flex items-center gap-2">
@@ -46,7 +46,7 @@ export const Footer = () => {
 
           {/* 3️⃣ Quick Links */}
           <div>
-            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-3">
+            <h3 className="text-lg font-semibold text-sky-900 dark:text-sky-300 mb-3 italic ">
               Quick Links
             </h3>
             <ul className="space-y-2">
@@ -89,7 +89,9 @@ export const Footer = () => {
         {/* Bottom Section - Centered Text */}
         <div className="text-center text-sm pt-6">
           <p>
-            © 2025 TaxAdvin Financial Services. Developed by{" "}
+            © 2025 TaxAdvin Financial Services.
+            <br />
+            Developed by{" "}
             <a
               href="https://alybadawy.com"
               target="_blank"

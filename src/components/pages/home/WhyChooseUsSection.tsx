@@ -3,7 +3,7 @@ import { whyChooseUsData } from "@/data/home/whyChooseUsData";
 
 export const WhyChooseUsSection = () => {
   return (
-    <section className="py-16 px-6 lg:px-8 bg-gray-200 dark:bg-gray-800">
+    <section className="py-8 px-6 lg:px-8 bg-gray-200 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto">
         <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 text-center">
           Why Choose TaxAdvin?
