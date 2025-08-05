@@ -59,7 +59,7 @@ export const MonthGrid = ({ month, year }: MonthProps) => {
           return (
             <div
               key={idx}
-              className={`relative h-24 border border-gray-200 dark:border-gray-700 rounded-lg p-1 flex flex-col items-start justify-start ${
+              className={`relative text-xs h-24 border border-gray-400 dark:border-gray-700 rounded-lg p-1 flex flex-col items-start justify-start ${
                 date && event ? "bg-blue-50 dark:bg-blue-900" : ""
               } ${!date ? "bg-transparent border-none" : ""}`}
             >

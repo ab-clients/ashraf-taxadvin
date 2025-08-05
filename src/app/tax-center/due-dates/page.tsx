@@ -29,7 +29,7 @@ export default function DueDatesPage() {
           2026 Tax Deadlines Calendar
         </h1>
         <p className="mt-2 text-gray-600 dark:text-gray-400 text-sm">
-          A month‑by‑month overview of key federal filing and payment dates.
+          A month-by-month overview of key federal filing and payment dates.
         </p>
       </header>
       <nav className="flex flex-wrap justify-center gap-2 mb-6">
