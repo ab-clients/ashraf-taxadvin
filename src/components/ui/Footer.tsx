@@ -52,14 +52,6 @@ export const Footer = () => {
             <ul className="space-y-2">
               <li>
                 <Link
-                  href="/"
-                  className="hover:text-sky-600 dark:hover:text-sky-400"
-                >
-                  Home
-                </Link>
-              </li>
-              <li>
-                <Link
                   href="/about"
                   className="hover:text-sky-600 dark:hover:text-sky-400"
                 >
@@ -80,6 +72,15 @@ export const Footer = () => {
                   className="hover:text-sky-600 dark:hover:text-sky-400"
                 >
                   Contact
+                </Link>
+              </li>
+
+              <li>
+                <Link
+                  href="/book-appointment"
+                  className="hover:text-sky-600 dark:hover:text-sky-400"
+                >
+                  Book Appointment
                 </Link>
               </li>
             </ul>

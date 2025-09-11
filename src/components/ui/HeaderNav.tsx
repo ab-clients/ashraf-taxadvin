@@ -13,6 +13,7 @@ export const HeaderNav = () => {
     { label: "Services", href: "/services" },
     { label: "About", href: "/about" },
     { label: "Contact", href: "/contact" },
+    { label: "Book Appointment", href: "/book-appointment" },
   ];
 
   return (

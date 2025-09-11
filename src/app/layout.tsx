@@ -6,6 +6,7 @@ import AOSProvider from "@/components/AOSProvider";
 import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
 import TaxAdvinSchema from "@/components/TaxAdvinSchema";
+import { Seal } from "@/components/pages/home/Seal";
 
 export const metadata: Metadata = {
   title: "TaxAdvin - Tax & Financial Services",
@@ -73,6 +74,7 @@ export default function RootLayout({
               <main className="flex-1 bg-gray-200 dark:bg-gray-800">
                 {children}
               </main>
+              <Seal />
               <Footer />
             </div>
           </AOSProvider>

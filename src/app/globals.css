@@ -28,7 +28,13 @@ body {
 
 @layer base {
   html {
-    scrollbar-gutter: stable;
+    /* scrollbar-gutter: stable; */
     scroll-behavior: smooth;
+  }
+}
+
+@layer utilities {
+  .animate-spin-slow {
+    animation: spin 20s linear infinite;
   }
 }
