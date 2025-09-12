@@ -2,7 +2,7 @@ import { HiOutlineCheckCircle } from "react-icons/hi";
 
 export default function FeaturesPreview() {
   return (
-    <div className="border-t border-gray-200 dark:border-gray-600 pt-8">
+    <div className=" dark:border-gray-600 pt-4 mb-8">
       <h3 className="text-xl font-semibold text-gray-900 dark:text-gray-100 mb-6 text-center">
         What you get with online booking:
       </h3>

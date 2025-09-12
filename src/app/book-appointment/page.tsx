@@ -35,17 +35,6 @@ export default function BookAppointmentPage() {
   return (
     <main className="min-h-screen bg-gray-50 dark:bg-gray-900 py-16 px-6 lg:px-8">
       <div className="max-w-4xl mx-auto">
-        {/* Header Section */}
-        <div className="text-center mb-12">
-          <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 dark:text-gray-100 mb-6">
-            Book Your Appointment
-          </h1>
-          <p className="text-xl text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
-            Schedule a free 30-minute consultation with our licensed CPA.
-            We&apos;re here to help with all your tax and accounting needs.
-          </p>
-        </div>
-
         {/* Booking Success State */}
         {bookingComplete && (
           <BookingSuccess onBookAnother={handleBookAnother} />
@@ -71,8 +60,8 @@ export default function BookAppointmentPage() {
           <div className="bg-white dark:bg-gray-800 rounded-xl shadow-lg p-8 md:p-12">
             <BookingHeader />
             <OnlineBookingCTA onStartBooking={handleStartBooking} />
-            <AlternativeContactOptions />
             <FeaturesPreview />
+            <AlternativeContactOptions />
           </div>
         )}
       </div>
