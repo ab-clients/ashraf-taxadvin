@@ -5,39 +5,39 @@ import { FaChevronDown, FaChevronUp } from "react-icons/fa";
 
 const faqs = [
   {
-    question: "What documents do I need to get started?",
+    question: "What makes TaxAdvin different from other accounting firms?",
     answer:
-      "You'll typically need your W-2s, 1099s, last year's tax return, receipts for deductions, and relevant business or investment documents.",
+      "We're licensed CPAs offering both traditional tax services and Fractional CFO expertise. You get enterprise-level financial leadership without the full-time cost, plus we serve clients nationwide with bilingual support in English and Arabic.",
   },
   {
-    question: "Is my information secure with TaxAdvin?",
+    question: "Do you serve clients outside of Florida?",
     answer:
-      "Yes. We use secure portals and strong encryption to protect your personal and financial data.",
+      "Yes, we serve clients nationwide with both virtual consultations and in-person meetings. Our secure technology makes remote tax preparation and bookkeeping seamless regardless of your location.",
   },
   {
-    question: "Can I file both personal and business taxes?",
+    question: "What is a Fractional CFO and do I need one?",
     answer:
-      "Yes, we handle both personal and business returns, including LLCs and sole proprietors.",
+      "A Fractional CFO provides strategic financial leadership part-time. If you need expert financial guidance, cash flow management, or business growth planning without hiring a full-time CFO, our fractional services are perfect for your business.",
   },
   {
-    question: "Do you offer year-round support?",
+    question: "Can you help with both personal and business finances?",
     answer:
-      "Absolutely. Our team is available all year for your tax questions—not just during tax season.",
+      "Absolutely. We handle individual tax returns, business taxes (LLCs, corporations, partnerships), bookkeeping, payroll, and provide comprehensive financial consulting for both personal and business needs.",
   },
   {
-    question: "What if I get audited?",
+    question: "Do you provide year-round support or just during tax season?",
     answer:
-      "We provide audit support and guidance. We'll help you understand and respond to IRS notices.",
+      "We provide year-round support. Tax planning, bookkeeping, payroll, and fractional CFO services continue throughout the year. You're never left wondering about your finances.",
   },
   {
-    question: "Can you help with back taxes or unfiled returns?",
+    question: "How does the free consultation work?",
     answer:
-      "Yes, we regularly help clients resolve back taxes and file unfiled returns.",
+      "Schedule a free 30-minute consultation where we'll discuss your specific needs, explain how we can help, and provide actionable insights. No obligation, no pressure—just expert guidance to help you make informed decisions.",
   },
   {
-    question: "Do you work with clients in all states?",
+    question: "What if I need help in Arabic?",
     answer:
-      "Yes, we serve clients nationwide and can file federal and all state returns.",
+      "We're fluent in both English and Arabic (نتحدث العربية). We can conduct consultations, explain financial concepts, and provide all services in your preferred language for clear communication.",
   },
 ];
 

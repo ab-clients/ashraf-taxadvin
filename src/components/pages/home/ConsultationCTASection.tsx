@@ -3,6 +3,7 @@ import {
   HiCheckCircle,
   HiGlobe,
   HiAcademicCap,
+  HiTranslate,
 } from "react-icons/hi";
 
 export const ConsultationCTASection = () => (
@@ -78,9 +79,7 @@ export const ConsultationCTASection = () => (
         </div>
 
         <div className="group bg-white/10 backdrop-blur-sm rounded-2xl p-4 text-center border border-white/20 hover:bg-white/15 transition-all duration-300 hover:scale-105">
-          <div className="text-xl mx-auto mb-2 group-hover:scale-110 transition-transform duration-300">
-            🌐
-          </div>
+          <HiTranslate className="w-6 h-6 text-yellow-300 mx-auto mb-2 group-hover:scale-110 transition-transform duration-300" />
           <h3 className="font-semibold text-white mb-1">Bilingual</h3>
           <p className="text-sky-100 text-sm">
             English & Arabic • نتحدث العربية

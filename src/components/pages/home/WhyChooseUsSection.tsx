@@ -2,20 +2,20 @@ import React from "react";
 import { whyChooseUsData } from "@/data/home/whyChooseUsData";
 
 export const WhyChooseUsSection = () => {
-  const getIconBgColor = (index: number) => {
-    const colors = [
-      "bg-sky-100 dark:bg-sky-900 text-sky-600 dark:text-sky-400",
-      "bg-emerald-100 dark:bg-emerald-900 text-emerald-600 dark:text-emerald-400",
-      "bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400",
-      "bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-400",
-      "bg-rose-100 dark:bg-rose-900 text-rose-600 dark:text-rose-400",
-      "bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400",
-    ];
-    return colors[index % colors.length];
-  };
+  // const getIconBgColor = (index: number) => {
+  //   const colors = [
+  //     "bg-purple-100 dark:bg-purple-900 text-purple-600 dark:text-purple-400",
+  //     "bg-orange-100 dark:bg-orange-900 text-orange-600 dark:text-orange-400",
+  //     "bg-rose-100 dark:bg-rose-900 text-rose-600 dark:text-rose-400",
+  //     "bg-indigo-100 dark:bg-indigo-900 text-indigo-600 dark:text-indigo-400",
+  //     "bg-sky-100 dark:bg-sky-900 text-sky-600 dark:text-sky-400",
+  //     "bg-emerald-100 dark:bg-emerald-900 text-emerald-600 dark:text-emerald-400",
+  //   ];
+  //   return colors[index % colors.length];
+  // };
 
   return (
-    <section className="py-20 px-6 bg-white dark:bg-gray-800">
+    <section className="py-8 px-6 lg:px-8 bg-gray-200 dark:bg-gray-800">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-white mb-6">
@@ -36,7 +36,7 @@ export const WhyChooseUsSection = () => {
               data-aos-delay={index * 100}
             >
               <div
-                className={`w-16 h-16 ${getIconBgColor(index)} rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
+                className={`w-16 h-16 bg-sky-600/20 text-sky-700 dark:bg-sky-500/20 dark:text-sky-400 rounded-full flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300`}
               >
                 <Icon className="w-8 h-8" />
               </div>

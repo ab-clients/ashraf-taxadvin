@@ -9,12 +9,13 @@ import TaxAdvinSchema from "@/components/TaxAdvinSchema";
 import { Seal } from "@/components/pages/home/Seal";
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://taxadvin.com'),
   title: "TaxAdvin - Fractional CFO & Tax Services",
   description:
-    "PTaxAdvin offers Fractional CFO oversight, financial department supervision, and tax services that maximize tax savings while streamlining your operations. Personalized, strategic, and unlike big firms, we partner with you.",
+    "TaxAdvin offers Fractional CFO oversight, financial department supervision, and tax services that maximize tax savings while streamlining your operations. Personalized, strategic, and unlike big firms, we partner with you.",
   keywords: [
     "Tax Advin",
-    "TadAdvin",
+    "TaxAdvin",
     "Tax Services Orlando",
     "Bookkeeping Orlando",
     "Financial Consulting Orlando",
@@ -27,6 +28,8 @@ export const metadata: Metadata = {
     "Financial Consultation Orlando",
     "Orlando CPA",
     "Nonprofit Accounting Orlando",
+    "Fractional CFO",
+    "Virtual CFO Services",
     "خدمات الضرائب أورلاندو",
     "خدمات المحاسبة أورلاندو",
     "استشارات مالية أورلاندو",
@@ -40,6 +43,36 @@ export const metadata: Metadata = {
     "AAA Plus Nonprofit Accounting",
     "Tax Preparation Orlando",
   ],
+  authors: [{ name: "TaxAdvin" }],
+  creator: "TaxAdvin",
+  publisher: "TaxAdvin",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  alternates: {
+    canonical: '/',
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_US',
+    url: 'https://taxadvin.com',
+    title: 'TaxAdvin - Fractional CFO & Tax Services',
+    description: 'Professional Fractional CFO and tax services nationwide. Licensed CPA expertise with bilingual support.',
+    siteName: 'TaxAdvin',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'TaxAdvin - Fractional CFO & Tax Services',
+    description: 'Professional Fractional CFO and tax services nationwide. Licensed CPA expertise with bilingual support.',
+  },
   icons: {
     icon: "/favicon.ico",
     shortcut: "/favicon-32x32.png",
