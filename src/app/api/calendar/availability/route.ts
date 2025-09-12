@@ -1,5 +1,6 @@
 import { google } from "googleapis";
 import { NextRequest, NextResponse } from "next/server";
+import { toZonedTime, fromZonedTime } from "date-fns-tz";
 
 export async function GET(request: NextRequest) {
   try {
@@ -33,7 +34,12 @@ export async function GET(request: NextRequest) {
     // Parse the date correctly to avoid timezone issues
     // The date comes in as YYYY-MM-DD format, we need to parse it in the target timezone
     const [year, month, dayOfMonth] = date.split("-").map(Number);
-    const selectedDate = new Date(year, month - 1, dayOfMonth); // month is 0-indexed
+    
+    // Create a date object that represents midnight in the target timezone
+    // This ensures business hours (9 AM - 5 PM) are in the correct timezone
+    const dateString = `${year}-${month.toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}`;
+    const midnightInTargetTz = fromZonedTime(new Date(`${dateString}T00:00:00`), timezone);
+    const selectedDate = toZonedTime(midnightInTargetTz, timezone);
 
     // Check if the selected date is a weekend (Saturday = 6, Sunday = 0)
     const dayOfWeek = selectedDate.getDay();
@@ -49,11 +55,13 @@ export async function GET(request: NextRequest) {
       });
     }
 
-    const startOfDay = new Date(selectedDate);
-    startOfDay.setHours(0, 0, 0, 0);
+    const startOfDayLocal = new Date(selectedDate);
+    startOfDayLocal.setHours(0, 0, 0, 0);
+    const startOfDay = fromZonedTime(startOfDayLocal, timezone);
 
-    const endOfDay = new Date(selectedDate);
-    endOfDay.setHours(23, 59, 59, 999);
+    const endOfDayLocal = new Date(selectedDate);
+    endOfDayLocal.setHours(23, 59, 59, 999);
+    const endOfDay = fromZonedTime(endOfDayLocal, timezone);
 
     // Get existing events for the selected date
     const response = await calendar.events.list({
@@ -82,9 +90,13 @@ export async function GET(request: NextRequest) {
 
     for (let hour = businessStart; hour < businessEnd; hour++) {
       for (let minute = 0; minute < 60; minute += slotInterval) {
-        const slotStart = new Date(selectedDate);
-        slotStart.setHours(hour, minute, 0, 0);
-
+        // Create slot start time in the target timezone
+        const slotStartLocal = new Date(selectedDate);
+        slotStartLocal.setHours(hour, minute, 0, 0);
+        
+        // Convert to UTC for API calls and storage
+        const slotStart = fromZonedTime(slotStartLocal, timezone);
+        
         const slotEnd = new Date(slotStart);
         slotEnd.setMinutes(slotEnd.getMinutes() + appointmentDuration);
 
@@ -95,8 +107,9 @@ export async function GET(request: NextRequest) {
         );
 
         // Check if the grace period would extend beyond business hours (5:00 PM)
-        const businessEndTime = new Date(selectedDate);
-        businessEndTime.setHours(businessEnd, 0, 0, 0); // 5:00 PM
+        const businessEndTimeLocal = new Date(selectedDate);
+        businessEndTimeLocal.setHours(businessEnd, 0, 0, 0); // 5:00 PM in local timezone
+        const businessEndTime = fromZonedTime(businessEndTimeLocal, timezone);
 
         const exceedsBusinessHours = gracePeriodEnd > businessEndTime;
 
