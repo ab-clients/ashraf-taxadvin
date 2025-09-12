@@ -48,7 +48,7 @@ export const ConsultationCTASection = () => (
       {/* CTA Button */}
       <div className="text-center mb-8">
         <a
-          href="/schedule"
+          href="/book-appointment"
           className="group inline-flex items-center gap-3 bg-white text-sky-700 font-bold text-lg px-10 py-5 rounded-2xl hover:bg-sky-50 hover:scale-105 focus:ring-4 focus:ring-white/30 transition-all duration-300 shadow-2xl hover:shadow-white/20"
         >
           <HiCalendar className="w-6 h-6 group-hover:rotate-12 transition-transform duration-300" />
