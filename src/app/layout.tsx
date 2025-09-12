@@ -9,7 +9,7 @@ import TaxAdvinSchema from "@/components/TaxAdvinSchema";
 import { Seal } from "@/components/pages/home/Seal";
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://taxadvin.com'),
+  metadataBase: new URL("https://taxadvin.com"),
   title: "TaxAdvin - Fractional CFO & Tax Services",
   description:
     "TaxAdvin offers Fractional CFO oversight, financial department supervision, and tax services that maximize tax savings while streamlining your operations. Personalized, strategic, and unlike big firms, we partner with you.",
@@ -52,26 +52,28 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   alternates: {
-    canonical: '/',
+    canonical: "/",
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
-    url: 'https://taxadvin.com',
-    title: 'TaxAdvin - Fractional CFO & Tax Services',
-    description: 'Professional Fractional CFO and tax services nationwide. Licensed CPA expertise with bilingual support.',
-    siteName: 'TaxAdvin',
+    type: "website",
+    locale: "en_US",
+    url: "https://taxadvin.com",
+    title: "TaxAdvin - Fractional CFO & Tax Services",
+    description:
+      "Professional Fractional CFO and tax services nationwide. Licensed CPA expertise with bilingual support.",
+    siteName: "TaxAdvin",
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'TaxAdvin - Fractional CFO & Tax Services',
-    description: 'Professional Fractional CFO and tax services nationwide. Licensed CPA expertise with bilingual support.',
+    card: "summary_large_image",
+    title: "TaxAdvin - Fractional CFO & Tax Services",
+    description:
+      "Professional Fractional CFO and tax services nationwide. Licensed CPA expertise with bilingual support.",
   },
   icons: {
     icon: "/favicon.ico",
