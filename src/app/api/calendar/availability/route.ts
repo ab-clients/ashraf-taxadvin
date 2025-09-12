@@ -34,11 +34,14 @@ export async function GET(request: NextRequest) {
     // Parse the date correctly to avoid timezone issues
     // The date comes in as YYYY-MM-DD format, we need to parse it in the target timezone
     const [year, month, dayOfMonth] = date.split("-").map(Number);
-    
+
     // Create a date object that represents midnight in the target timezone
     // This ensures business hours (9 AM - 5 PM) are in the correct timezone
-    const dateString = `${year}-${month.toString().padStart(2, '0')}-${dayOfMonth.toString().padStart(2, '0')}`;
-    const midnightInTargetTz = fromZonedTime(new Date(`${dateString}T00:00:00`), timezone);
+    const dateString = `${year}-${month.toString().padStart(2, "0")}-${dayOfMonth.toString().padStart(2, "0")}`;
+    const midnightInTargetTz = fromZonedTime(
+      new Date(`${dateString}T00:00:00`),
+      timezone
+    );
     const selectedDate = toZonedTime(midnightInTargetTz, timezone);
 
     // Check if the selected date is a weekend (Saturday = 6, Sunday = 0)
@@ -93,10 +96,10 @@ export async function GET(request: NextRequest) {
         // Create slot start time in the target timezone
         const slotStartLocal = new Date(selectedDate);
         slotStartLocal.setHours(hour, minute, 0, 0);
-        
+
         // Convert to UTC for API calls and storage
         const slotStart = fromZonedTime(slotStartLocal, timezone);
-        
+
         const slotEnd = new Date(slotStart);
         slotEnd.setMinutes(slotEnd.getMinutes() + appointmentDuration);
 

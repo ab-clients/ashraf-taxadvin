@@ -9,9 +9,9 @@ import TaxAdvinSchema from "@/components/TaxAdvinSchema";
 import { Seal } from "@/components/pages/home/Seal";
 
 export const metadata: Metadata = {
-  title: "TaxAdvin - Tax & Financial Services",
+  title: "TaxAdvin - Fractional CFO & Tax Services",
   description:
-    "Professional tax and financial solutions for individuals and businesses.",
+    "PTaxAdvin offers Fractional CFO oversight, financial department supervision, and tax services that maximize tax savings while streamlining your operations. Personalized, strategic, and unlike big firms, we partner with you.",
   keywords: [
     "Tax Advin",
     "TadAdvin",

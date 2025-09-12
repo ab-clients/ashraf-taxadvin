@@ -22,11 +22,13 @@ export const HeroSection = () => (
     {/* Content */}
     <div className="relative z-10 max-w-5xl mx-auto px-6 py-20 sm:py-28 text-center">
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
-        Your Trusted Partner for Simple &amp; Stress-Free Financial Solutions
+        Your <span className="text-sky-300">fractional CFO</span> Partner for
+        Maximum Tax Savings
       </h1>
       <p className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-sky-100">
-        Comprehensive tax and accounting services for individuals, small
-        businesses, and nonprofits across Florida - available locally or online.
+        We don&apos;t just file your taxes, we supervise your financial
+        department, streamline operations, and unlock tax savings you
+        didn&apos;t know were possible.
       </p>
       <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
         <Link

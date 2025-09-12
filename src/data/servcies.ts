@@ -13,66 +13,70 @@ import {
   HiOfficeBuilding,
   HiGlobeAlt,
   HiUserGroup,
+  HiCalculator,
+  HiFolder,
+  HiSupport,
 } from "react-icons/hi";
-
 export const serviceDetails: ServiceDetail[] = [
   {
     slug: "tax-preparation-planning",
-    title: "Tax Preparation & Planning",
+    title: "Tax Return Preparation & Strategic Planning",
     icon: HiDocumentText,
     description:
-      "Maximize compliance and minimize stress by letting our team handle your individual or business returns. We ensure accuracy, leverage applicable deductions and credits, and strategize for your future.",
+      "Complete tax return preparation combined with proactive planning strategies. We ensure accurate filings while maximizing deductions and credits to drive measurable tax savings year-round.",
     showOnHomePage: true,
+    track: "individual",
     sections: [
       {
         heading: "Proactive Tax Planning",
-        body: "At TaxAdvin, we empower you with early tax planning to help retain more income and wealth. By timing your income, accelerating deductions, and identifying credits proactively, we reduce your overall tax bill and position you for the road ahead.",
+        body: "We plan early so you keep more: timing income, accelerating deductions, and surfacing credits before year-end—reducing your tax bill and improving after-tax cash flow.",
       },
       {
         heading: "Strategic Tax Optimization",
-        body: "Beyond filing—we strategize: reviewing entity structure, retirement planning, and specialized credits (like R&D, WOTC, or capital equipment). This ensures your financial decisions are tax-optimized at every turn.",
+        body: "Beyond filing, we review entity structure, retirement strategies, and specialized credits (R&D, WOTC, capital equipment) to engineer legal, durable tax savings.",
       },
       {
-        heading: "Streamlined Filing Process",
-        body: "Our verified process includes gathering documents in advance, checking for inconsistencies, filing necessary extensions, and managing estimated taxes—eliminating last-minute pressure and surprise liabilities.",
+        heading: "Complete Tax Return Preparation",
+        body: "Professional preparation of individual tax returns with meticulous attention to detail, ensuring accurate filings and maximum refunds while identifying all available deductions and credits.",
       },
       {
         heading: "Support for Individuals and Businesses",
-        body: "Individuals enjoy hassle-free IRS and state e-filing with support in audit or penalty reviews. Business owners get quarterly reviews, planning sessions, and guidance tailored to LLCs, corporations, or partnerships.",
+        body: "Individuals get maximum refunds with clear explanations. Businesses receive quarterly reviews, planning sessions, and guidance tailored to LLCs, corporations, and partnerships.",
       },
       {
         heading: "Year-Round Advantage",
-        body: "When you choose TaxAdvin, you gain a tax professional who listens, explains clearly, and provides ongoing support—transforming tax season from a stressor into a year-round advantage.",
+        body: "You get a responsive professional who listens, explains, and stays engaged—turning tax season into a calm, year-round advantage focused on tax savings.",
       },
     ],
   },
   {
     slug: "bookkeeping-quickbooks",
-    title: "Bookkeeping & QuickBooks",
+    title: "Bookkeeping & QuickBooks (Built for Tax Savings)",
     icon: HiBookOpen,
     description:
-      "Stay organized with meticulous record-keeping, transaction categorization and reconciliation. We're QuickBooks experts and offer setup, training and ongoing management.",
+      "Meticulous books are the engine of tax savings. We categorize transactions correctly, reconcile on schedule, and design workflows that feed your strategy—not just your statements.",
     showOnHomePage: true,
+    track: "business",
     sections: [
       {
         heading: "Automated, Accurate Bookkeeping",
-        body: "With bookkeeping built around QuickBooks, your accounting runs on autopilot: transactions sync, bank feeds auto-match, and the risk of entry errors drops dramatically—guaranteeing cleaner books.",
+        body: "QuickBooks done right: synced feeds, rules that reduce errors, and consistent reconciliations—so your books stay clean and tax-ready.",
       },
       {
         heading: "Comprehensive Record Management",
-        body: "TaxAdvin handles your day-to-day records: we sort incoming invoices, track expenses, reconcile bank statements, and maintain payroll data so your books are always audit-ready.",
+        body: "We manage invoices, expenses, bank recs, and payroll data so your ledgers are audit-ready and aligned with tax law classifications.",
       },
       {
         heading: "Real-Time Financial Insights",
-        body: "You'll get real-time dashboards and monthly financial statements that surface cash flow, profit margins, and unpaid invoices—enabling faster, better decisions.",
+        body: "Dashboards and monthly statements reveal cash flow, margins, and AR/AP—supporting faster decisions and better tax planning.",
       },
       {
         heading: "Customized QuickBooks Solutions",
-        body: "We customize QuickBooks to your business: chart-of-accounts setup, custom reconciliations, staff training, and workflow automation for recurring processes.",
+        body: "Chart-of-accounts tuned to your business, role-based workflows, and automation for recurring processes to support operational streamlining.",
       },
       {
         heading: "Focus on Growth",
-        body: "Choose TaxAdvin and get more than bookkeeping: you get an organized financial structure that supports tax planning, forecasting, and helps you stay focused on growth.",
+        body: "Clean books compound value: they power forecasting, support compliance, and reveal opportunities for tax savings and profit.",
       },
     ],
   },
@@ -81,28 +85,29 @@ export const serviceDetails: ServiceDetail[] = [
     title: "Payroll & Compliance",
     icon: HiCreditCard,
     description:
-      "Ensure your team is paid accurately and on time. Our payroll services include tax submissions and compliance monitoring to free up your time and reduce risk.",
+      "Accurate, on-time payroll with compliance built in. We reduce risk, avoid penalties, and keep filings current—freeing you to focus on your team and operations.",
     showOnHomePage: true,
+    track: "business",
     sections: [
       {
         heading: "Complex Payroll Regulations",
-        body: "U.S. payroll is governed by federal, state, and local laws—touching everything from tax withholding to overtime and classification. Staying compliant in this landscape is essential.",
+        body: "Federal, state, and local rules affect withholding, overtime, and worker classification. We keep you aligned—no guesswork.",
       },
       {
         heading: "Avoiding Costly Errors",
-        body: "Errors such as misclassifying staff, incorrect withholding or missed overtime rules can result in fines, audits, and penalties that damage your cash flow or business reputation.",
+        body: "Misclassification and incorrect withholding trigger audits and fines. We build controls that prevent errors before they cost you.",
       },
       {
         heading: "Complete Payroll Management",
-        body: "Our all-inclusive payroll service handles paycheck processing, quarterly (941/944) filings, state unemployment, W-2/1099 generation, and garnishment or SUI reporting.",
+        body: "Processing, 941/944 filings, SUI, W-2/1099s, garnishments—handled end-to-end with audit-ready records.",
       },
       {
         heading: "Technology-Driven Efficiency",
-        body: "We integrate trusted payroll-compliance software and time-tracking tools to automate calculations, improve record accuracy, and reduce manual oversight.",
+        body: "Time-tracking and payroll platforms automate calculations and maintain clean, defensible records.",
       },
       {
         heading: "Peace of Mind Every Pay Period",
-        body: "Work with TaxAdvin and rest easy—your payroll is compliant and secure every payment period, letting you focus on your team and operations.",
+        body: "We run payroll with discipline and transparency so you can lead confidently—and protect margins.",
       },
     ],
   },
@@ -111,58 +116,60 @@ export const serviceDetails: ServiceDetail[] = [
     title: "Nonprofit & Specialty Accounting",
     icon: HiHeart,
     description:
-      "For nonprofits and specialized entities, we provide grant tracking, fund accounting and reporting to ensure transparency and regulatory compliance.",
+      "Grant tracking, fund accounting, and clear reporting—so you maintain donor trust, satisfy regulators, and focus on mission.",
     showOnHomePage: true,
+    track: "business",
     sections: [
       {
         heading: "Complexities of Nonprofit Finance",
-        body: "Nonprofits must comply with donor agreements, fund restrictions, and IRS regulations—but grant-based funding introduces extra levels of complexity. Fund accounting helps you manage this effectively.",
+        body: "Donor restrictions, grant compliance, and IRS rules add layers of control. We design systems that keep every dollar accountable.",
       },
       {
         heading: "Fund-Level Tracking",
-        body: "We implement fund-level tracking and grant management systems so each dollar is clearly tagged, allocated, and reported separately—ensuring confident audit-readiness.",
+        body: "We implement fund accounting and grant controls so allocations, restrictions, and outcomes are crystal-clear.",
       },
       {
         heading: "IRS and Audit Support",
-        body: "TaxAdvin prepares Schedule A and detailed notes for IRS Form 990, manages restricted net assets, and supports both internal and external audits.",
+        body: "Form 990 with Schedule A narratives, restricted net asset tracking, and complete support for internal/external audits.",
       },
       {
         heading: "Streamlined Processes",
-        body: "We build internal controls and dashboards so you spend less time on spreadsheets and more time on your mission. All activity is thoroughly documented for transparency and trust.",
+        body: "Internal controls and dashboards reduce spreadsheet sprawl—documenting every step for transparency.",
       },
       {
         heading: "Transparency and Stewardship",
-        body: "Choose TaxAdvin for nonprofit accounting services designed for clarity—so you can demonstrate stewardship, maintain donor confidence, and operate with financial accountability.",
+        body: "We help you demonstrate stewardship and strengthen donor confidence through clear, consistent reporting.",
       },
     ],
   },
   {
     slug: "business-advisory",
-    title: "Business Advisory",
+    title: "Business Advisory (Profit & Process)",
     icon: HiChartBar,
     description:
-      "Leverage decades of experience to improve cash flow, create efficient systems and build sustainable growth through strategic planning and financial analysis.",
+      "Turn data into decisions. We optimize pricing, cash flow, and systems—linking day-to-day operations to tax-efficient growth.",
     showOnHomePage: true,
+    track: "business",
     sections: [
       {
         heading: "Turning Data into Strategy",
-        body: "Business advisory empowers you to turn financial data into actionable strategy. We offer cash flow forecasting, budgeting, and performance analysis so you can act deliberately, not reactively.",
+        body: "Forecasts, budgets, and performance analysis so you act deliberately—not reactively.",
       },
       {
         heading: "Optimizing Business Structure",
-        body: "We consult on choosing the right legal structure, setting pricing models, expense optimizations, and system improvements that streamline operations.",
+        body: "We advise on legal structure, pricing models, and expense controls—supporting operation streamline and scalability.",
       },
       {
         heading: "Ongoing Strategic Support",
-        body: "From monthly financial reviews to succession planning, our goal is to bolster profit margins, minimize risk, and guide strategic business decisions.",
+        body: "Monthly reviews and board-ready metrics to bolster margins, reduce risk, and highlight tax-efficient moves.",
       },
       {
         heading: "Planning for the Future",
-        body: "Whether you're considering expansion or managing cash gaps, our projections and scenario modeling give you visibility into future needs and investment timing.",
+        body: "Scenario modeling clarifies expansion timing, capital needs, and hiring decisions.",
       },
       {
         heading: "Partnering for Growth",
-        body: "When you engage TaxAdvin, you partner with advisors who align financial systems to your goals, providing clarity and a roadmap for sustainable growth.",
+        body: "We align systems with goals and surface opportunities for profit and tax savings.",
       },
     ],
   },
@@ -171,28 +178,29 @@ export const serviceDetails: ServiceDetail[] = [
     title: "Estate & Trust Planning",
     icon: HiCollection,
     description:
-      "Get guidance on estate and trust planning, inheritance taxes and other specialized filings to protect your legacy and minimize tax impact.",
+      "Protect your legacy with planning that minimizes tax impact and provides clear, compassionate support to families and executors.",
     showOnHomePage: true,
+    track: "individual",
     sections: [
       {
         heading: "Understanding Estate Complexities",
-        body: "Estate planning involves complex federal estate taxes, state inheritance rules, probate, beneficiary rights, and family considerations—all of which can be mitigated with proper planning.",
+        body: "Federal estate taxes, state inheritance rules, probate, and family goals—all planned with foresight.",
       },
       {
         heading: "Trust and Gift Strategies",
-        body: "We assist with living and irrevocable trusts, gift-tax planning strategies, and qualified terminable interest property (QTIP) trusts to reduce your estate's tax exposure.",
+        body: "Living/irrevocable trusts, gift strategies, and QTIP planning to reduce exposure and align with intent.",
       },
       {
         heading: "Tax Preparation and Filing",
-        body: "TaxAdvin calculates projected estate tax liability, prepares IRS Form 706 when needed, coordinates with legal counsel, and plans for smooth transfer of assets.",
+        body: "Form 706 preparation, coordination with counsel, and smooth asset transfer planning.",
       },
       {
         heading: "Support for Executors and Families",
-        body: "We support valuation, liquidity, and probate timelines so executors and families avoid surprises and can manage inherited assets calmly.",
+        body: "We handle valuation, liquidity needs, and timelines so families can decide calmly.",
       },
       {
         heading: "Legacy Protection",
-        body: "With TaxAdvin's estate services, you gain access to seasoned CPAs experienced in tax-efficient wealth transfer, compassionate guidance, and future-oriented structuring.",
+        body: "Tax-efficient wealth transfer guided by experienced CPAs who communicate clearly and respectfully.",
       },
     ],
   },
@@ -201,58 +209,60 @@ export const serviceDetails: ServiceDetail[] = [
     title: "Tax Resolution & Audit Defense",
     icon: HiShieldCheck,
     description:
-      "Resolve IRS/state liabilities and protect your rights if you're facing audits, notices, or penalties through expert negotiation and representation.",
+      "Notices, audits, penalties—resolved. We negotiate on your behalf and restore full compliance as quickly and affordably as possible.",
     showOnHomePage: false,
+    track: "individual",
     sections: [
       {
         heading: "Representation & Notice Resolution",
-        body: "We handle IRS and state notice letters (CP‑2000, audits, collections), appeals, power-of-attorney, penalty abatements, and lien/levy releases—providing expert responses that resolve most cases at first contact.",
+        body: "We handle IRS/state notices (CP-2000, audits, collections), appeals, POA, abatements, and lien/levy releases.",
       },
       {
         heading: "Installment Agreements & OICs",
-        body: "Our team negotiates installment plans and Offers‑in‑Compromise to reduce liabilities while preserving cash flow—designed to help you regain financial stability quickly and affordably.",
+        body: "We negotiate payment plans and Offers-in-Compromise that protect cash flow and stability.",
       },
       {
         heading: "Audit Defense",
-        body: "During IRS or state audits, we review records, prepare documentation, and represent you throughout—shielding you from escalating costs, penalties, and unexpected outcomes.",
+        body: "We prepare documentation and represent you end-to-end—reducing penalties and uncertainty.",
       },
       {
         heading: "Proactive Compliance Reviews",
-        body: "We conduct preemptive tax reviews to identify income discrepancies or payroll misclassifications—resolving issues before they trigger notices or penalties.",
+        body: "Preemptive checks catch misclassifications or discrepancies before they escalate.",
       },
       {
-        heading: "Comprehensive Support Till Resolution",
-        body: "With TaxAdvin, you're not alone: our resolution team sticks with you until all liabilities are resolved and your compliance is fully restored.",
+        heading: "Support Until Resolution",
+        body: "We stay engaged until liabilities are cleared and your compliance posture is fully restored.",
       },
     ],
   },
   {
     slug: "virtual-cfo-financial-leadership",
-    title: "Virtual CFO & Strategic Financial Leadership",
+    title: "Fractional / Virtual CFO & Strategic Financial Leadership",
     icon: HiChartPie,
     description:
-      "Access CFO‑level financial oversight—cash forecasting, KPI tracking, growth planning—without a full-time executive.",
+      "CFO-level guidance without the full-time cost—financial department supervision, KPI discipline, and operational streamlining that drive tax savings and profit.",
     showOnHomePage: false,
+    track: "business",
     sections: [
       {
         heading: "Strategic Financial Oversight",
-        body: "Get ongoing, high-level financial leadership through a fractional or virtual CFO model—ideal for growing businesses that need top-tier guidance without executive overhead.",
+        body: "Fractional CFO leadership integrates planning, controls, and tax strategy—keeping your financial cycle compliant and efficient.",
       },
       {
         heading: "Rolling Cash Flow & Scenario Models",
-        body: "We create forward-looking cash flow models, budget scenarios, and performance dashboards so you can make data-backed decisions and manage capital proactively.",
+        body: "Forward-looking models and dashboards inform pricing, hiring, inventory, and financing decisions.",
       },
       {
         heading: "KPI & Profitability Analysis",
-        body: "Benchmark your margins, monitor gross/net profitability, and analyze pricing structures across product lines to fine‑tune revenue drivers and reduce costs.",
+        body: "Track margins, unit economics, and pricing effectiveness—then act on what moves profit.",
       },
       {
         heading: "Capital & ERP Planning Support",
-        body: "We advise on capital fundraising readiness, debt strategy, system implementation (ERP, billing), and operational optimization aligned to your goals.",
+        body: "We support fundraising readiness, debt strategy, and system implementations (ERP/billing) tied to measurable ROI.",
       },
       {
         heading: "Enterprise-Level Value, Fractional Cost",
-        body: "Our virtual CFO services deliver elite financial strategy and roadmaps—without the full-time salary, benefits, or managerial burden.",
+        body: "Get executive-grade clarity and roadmaps—minus the salary, benefits, and management overhead.",
       },
     ],
   },
@@ -261,28 +271,29 @@ export const serviceDetails: ServiceDetail[] = [
     title: "Entity Formation & Tax Structuring",
     icon: HiOfficeBuilding,
     description:
-      "Starting or restructuring a business? We handle LLCs, corporations, S‑Corp elections, EINs, governance and multi-state tax planning for tax-efficient structure.",
+      "Choose and set up the right structure (LLC, S-Corp, C-Corp, partnership) for liability protection, operational streamlining, and long-term tax savings.",
     showOnHomePage: false,
+    track: "business",
     sections: [
       {
         heading: "Legal & Tax Structure Advice",
-        body: "We advise whether to form as S‑Corp, C‑Corp, LLC, or partnership based on liability protection, tax impact, and future business goals like financing or exit.",
+        body: "Structure choices affect liability, taxes, capital, and exit. We map options to goals—then execute.",
       },
       {
         heading: "Formation & Compliance Filing",
-        body: "Our team prepares Articles of Incorporation, Operating Agreements, EIN applications, state registrations, and ongoing compliance documents—including BOI filings and annual reports.",
+        body: "Articles/Operating Agreements, EINs, registrations, BOI filings, and annual reports handled end-to-end.",
       },
       {
         heading: "Ownership & Governance Setup",
-        body: "We help structure ownership, vesting, and shareholder agreements to guard long-term clarity—key for funding, succession, and partnership scenarios.",
+        body: "Vesting, buy-sell, and shareholder agreements designed for clarity and future funding.",
       },
       {
         heading: "Multi-State Presence Planning",
-        body: "Planning to do business across multiple states? We manage state tax registration, nexus analysis, and multi-state compliance to minimize exposure and complexity.",
+        body: "Nexus analysis and registrations to minimize complexity and exposure across states.",
       },
       {
-        heading: "One‑Sheet Tax Impact Summary",
-        body: "Each structure includes a clear, one-page tax impact summary and governance roadmap—a planning tool clients can reference year-round.",
+        heading: "One-Sheet Tax Impact Summary",
+        body: "Every engagement ends with a one-page tax impact and governance roadmap you can reference year-round.",
       },
     ],
   },
@@ -291,28 +302,29 @@ export const serviceDetails: ServiceDetail[] = [
     title: "International Tax Compliance & Planning",
     icon: HiGlobeAlt,
     description:
-      "Navigate U.S. and cross‑border taxation with support on FBAR/FinCen, transfer pricing, foreign credits, and treaty analysis to reduce tax exposure.",
+      "Cross-border done right: FBAR/FinCEN, foreign credits, treaty analysis, transfer pricing—reduce global exposure and avoid penalties.",
     showOnHomePage: false,
+    track: "business",
     sections: [
       {
         heading: "Cross-Border Tax Advisory",
-        body: "We guide inbound and outbound investments, global transactions, and remote workforce compliance with U.S. tax rules—and manage foreign exposure.",
+        body: "Inbound/outbound investments, global transactions, and distributed teams planned for compliance and efficiency.",
       },
       {
         heading: "FBAR & Foreign Income Reporting",
-        body: "Our team handles FBAR, FinCEN filing, foreign income tax returns, and tracks foreign financial holdings to avoid penalties and ensure accurate disclosure.",
+        body: "FBAR, FinCEN, foreign returns, and asset tracking—filed accurately to avoid penalties.",
       },
       {
         heading: "Foreign Tax Credit Optimization",
-        body: "Reduce double taxation with transfer pricing strategies, withholding planning, foreign tax credit maximization, and tax treaty provisions.",
+        body: "Leverage credits, withholding planning, and treaty provisions to prevent double taxation.",
       },
       {
         heading: "Entity Structuring & Treaty Analysis",
-        body: "We structure investment entities for tax mitigation and leverage international treaty environments for capital movement and cross-border transactions.",
+        body: "We structure entities and apply treaty rules to legally minimize taxes on cross-border flows.",
       },
       {
         heading: "Global Compliance for U.S. Taxpayers",
-        body: "We advise on offshore trusts, cryptocurrency holdings, foreign real estate, and worldwide estate tax planning for U.S. taxpayers with international exposure.",
+        body: "Offshore trusts, crypto, real estate, and estate planning for U.S. taxpayers with worldwide assets.",
       },
     ],
   },
@@ -321,28 +333,122 @@ export const serviceDetails: ServiceDetail[] = [
     title: "Succession Planning & M&A Advisory",
     icon: HiUserGroup,
     description:
-      "Preparing to sell your business, bring in partners, or retire? We guide business valuation, M&A structuring and partner transitions to protect value and minimize tax.",
+      "Plan exits, partner transitions, and sales that preserve value and optimize after-tax proceeds.",
     showOnHomePage: false,
+    track: "business",
     sections: [
       {
         heading: "Exit & Transition Planning",
-        body: "We help business owners plan exit strategies—whether selling to third parties, passing to family, or transitioning leadership—focusing on value preservation and tax efficiency.",
+        body: "Third-party sale, family transfer, or leadership change—structured for clarity and tax efficiency.",
       },
       {
         heading: "Valuation & Deal Structuring",
-        body: "Business valuations, drafting buy-sell agreements, and structuring deals that maximize after-tax proceeds—tailored to exit or partner transition goals.",
+        body: "Valuations, buy-sell agreements, and deal terms engineered to maximize net proceeds.",
       },
       {
         heading: "M&A & Transaction Advisory",
-        body: "Our advisory covers due diligence, quality-of-earnings reporting, negotiation support, and post-closing integration to help deals close smoothly.",
+        body: "Due diligence, QoE, negotiation support, and post-close integration for smooth, value-preserving outcomes.",
       },
       {
         heading: "Ownership Continuity Governance",
-        body: "We ensure governance structures and owner alignment support your transfer goals—protecting family, partner, or employee transitions from legal and tax uncertainty.",
+        body: "Governance that reduces disputes and safeguards continuity across stakeholders.",
       },
       {
         heading: "Legacy & Financial Continuity",
-        body: "We guide exit-planning with an emphasis on legacy preservation—helping clients achieve tax-optimized transitions that reflect their long-term vision and values.",
+        body: "A transition that reflects your vision—financially sound, tax-aware, and execution-ready.",
+      },
+    ],
+  },
+  {
+    slug: "individual-bookkeeping-organization",
+    title: "Financial Organization & Bookkeeping for Individuals",
+    icon: HiFolder,
+    description:
+      "Personal financial organization and bookkeeping services to help individuals track expenses, organize records, and prepare for tax season with confidence.",
+    showOnHomePage: false,
+    track: "individual",
+    sections: [
+      {
+        heading: "Personal Financial Organization",
+        body: "We help organize your personal finances, categorize expenses, and create systems for tracking income, deductions, and financial records throughout the year.",
+      },
+      {
+        heading: "Individual Bookkeeping Services",
+        body: "Professional bookkeeping for individuals with complex finances, side businesses, rental properties, or investment income requiring detailed record-keeping.",
+      },
+      {
+        heading: "Tax Preparation Support",
+        body: "Year-round organization ensures smooth tax preparation with all necessary documents, receipts, and financial records properly categorized and accessible.",
+      },
+      {
+        heading: "Expense Tracking & Deduction Optimization",
+        body: "Systematic tracking of deductible expenses including business costs, medical expenses, charitable donations, and investment-related fees.",
+      },
+      {
+        heading: "Financial Record Management",
+        body: "Digital and physical record management systems that maintain compliance requirements while providing easy access to important financial documents.",
+      },
+    ],
+  },
+  {
+    slug: "refund-deduction-maximization",
+    title: "Maximizing Refunds & Deductions",
+    icon: HiCalculator,
+    description:
+      "Comprehensive review and optimization of your tax situation to ensure you claim every deduction and credit available, maximizing your refund potential.",
+    showOnHomePage: false,
+    track: "individual",
+    sections: [
+      {
+        heading: "Comprehensive Deduction Review",
+        body: "Thorough analysis of all potential deductions including itemized deductions, business expenses, educational costs, and often-overlooked tax benefits.",
+      },
+      {
+        heading: "Credit Optimization",
+        body: "Identification and application of all available tax credits including Child Tax Credit, Education Credits, Earned Income Credit, and specialized credits.",
+      },
+      {
+        heading: "Strategic Tax Planning",
+        body: "Year-round planning to position your finances for maximum tax benefits, including timing of income, expenses, and major financial decisions.",
+      },
+      {
+        heading: "Prior Year Reviews",
+        body: "Review of previous tax returns to identify missed deductions or credits, with amended return preparation when beneficial.",
+      },
+      {
+        heading: "Documentation & Record Support",
+        body: "Guidance on proper documentation and record-keeping to support all claimed deductions and credits, ensuring audit-readiness.",
+      },
+    ],
+  },
+  {
+    slug: "financial-distress-complexity-support",
+    title: "Specialized Support for Financial Distress & Complexity",
+    icon: HiSupport,
+    description:
+      "Expert guidance through complex financial situations including debt resolution, bankruptcy considerations, major life changes, and intricate tax scenarios.",
+    showOnHomePage: false,
+    track: "individual",
+    sections: [
+      {
+        heading: "Financial Crisis Navigation",
+        body: "Compassionate guidance through financial difficulties including job loss, medical expenses, divorce, or other major life disruptions affecting your tax situation.",
+      },
+      {
+        heading: "Complex Tax Situations",
+        body: "Expert handling of intricate scenarios including multiple income sources, foreign income, complex investments, inheritance issues, and unusual deductions.",
+      },
+      {
+        heading: "Debt & Bankruptcy Considerations",
+        body: "Strategic advice on tax implications of debt forgiveness, bankruptcy proceedings, and financial restructuring to minimize long-term tax consequences.",
+      },
+      {
+        heading: "IRS Problem Resolution",
+        body: "Specialized support for individuals facing IRS collection actions, payment difficulties, or complex compliance issues requiring expert intervention.",
+      },
+      {
+        heading: "Financial Recovery Planning",
+        body: "Long-term planning to rebuild financial stability while optimizing tax strategies during recovery periods and major life transitions.",
       },
     ],
   },

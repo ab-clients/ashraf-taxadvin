@@ -1,32 +1,30 @@
 import { HomeData } from "@/types/internal/home/homeData";
-import { HiBriefcase } from "react-icons/hi";
+import { HiOfficeBuilding, HiUser, HiBriefcase } from "react-icons/hi";
 import { HiGlobeAmericas } from "react-icons/hi2";
-import { FaHandsHelping } from "react-icons/fa";
-import { TbBuildingBurjAlArab } from "react-icons/tb";
 
 export const whyChooseUsData: HomeData[] = [
   {
-    title: "Certified & Experienced",
+    title: "Certified CPA Expertise",
     description:
-      "Work with licensed CPAs who stay up-to-date with ever-changing tax laws, ensuring your returns and plans are compliant and optimized.",
+      "Licensed CPA with deep experience in tax optimization and strategic financial planning. We optimize every return and transaction to maximize your tax savings.",
     icon: HiBriefcase,
   },
   {
-    title: "Personalized Guidance",
+    title: "Fractional CFO Value",
     description:
-      "You’re never just another number. We take the time to understand your goals and tailor our services to your unique situation.",
-    icon: FaHandsHelping,
+      "Get enterprise-level financial leadership without the full-time cost and overhead. Strategic guidance that transforms your business finances and growth.",
+    icon: HiOfficeBuilding,
   },
   {
-    title: "Local & Remote",
+    title: "Personal Partnership",
     description:
-      "Meet us in Orlando, FL or connect virtually from anywhere. Our secure technology makes remote tax and bookkeeping effortless.",
+      "You're not just a number. We provide personalized attention and strategic guidance year-round with clear communication in both English and Arabic.",
+    icon: HiUser,
+  },
+  {
+    title: "Flexible & Accessible",
+    description:
+      "Meet us in Orlando, FL or connect virtually from anywhere. Our secure technology makes remote tax and bookkeeping effortless for global clients.",
     icon: HiGlobeAmericas,
-  },
-  {
-    title: "Multi‑language Friendly",
-    description:
-      "We speak Arabic and English fluently, ensuring clear communication for a wider community.",
-    icon: TbBuildingBurjAlArab,
   },
 ];
