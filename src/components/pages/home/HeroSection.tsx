@@ -32,7 +32,7 @@ export const HeroSection = () => (
       </p>
       <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
         <Link
-          href="/contact"
+          href="/book-appointment"
           className="px-8 py-3 rounded-md text-base font-semibold bg-sky-500 hover:bg-sky-600 focus:outline-none focus:ring-4 focus:ring-sky-300"
         >
           Schedule Your Free Consultation
