@@ -13,7 +13,7 @@ export const Seal = () => {
 
   return (
     <div
-      className="hidden md:block fixed bottom-12 right-8 z-100 cursor-grab hover:scale-105 transition-transform duration-100"
+      className="hidden md:block fixed bottom-12 right-8 z-100 cursor-grab hover:scale-105 transition-transform duration-100 "
       onClick={handleClick}
       role="button"
       tabIndex={0}
@@ -26,15 +26,12 @@ export const Seal = () => {
     >
       <div className="relative transform -rotate-12">
         <div className="bg-yellow-300/15 backdrop-blur-sm border-3 border-yellow-400/50 rounded-lg px-4 py-3 sm:px-6 sm:py-4 shadow-xl">
-          {/* Decorative border */}
           <div className="border-2 border-dashed border-yellow-400/40 rounded p-2 sm:p-3">
             <div className="text-center">
-              {/* Header */}
               <div className="text-xs sm:text-md font-bold text-yellow-100 tracking-wider mb-4">
-                GUARNTEED TAX SAVINGS
+                GUARANTEED TAX SAVINGS
               </div>
 
-              {/* Main text */}
               <div className="text-xs sm:text-sm font-semibold text-yellow-50 leading-tight mb-1">
                 <div>LED BY</div>
                 <div className="text-sm sm:text-base font-bold">
@@ -42,12 +39,10 @@ export const Seal = () => {
                 </div>
               </div>
 
-              {/* CPA designation */}
               <div className="text-lg sm:text-xl font-black text-yellow-200 tracking-widest bold italic">
                 CPA
               </div>
 
-              {/* Decorative line */}
               <div className="w-12 sm:w-16 h-0.5 bg-yellow-300 mx-auto mt-1"></div>
             </div>
           </div>

@@ -1,7 +1,7 @@
-import { StorySection } from "@/components/pages/about/StorySection";
-import { MissionStatementSection } from "@/components/pages/about/MissionStatementSection";
-import { VisionSection } from "@/components/pages/about/VisionSection";
-import { FounderSection } from "@/components/pages/about/FounderSection";
+import { StorySection } from "@/app/about/StorySection";
+import { MissionStatementSection } from "@/app/about/MissionStatementSection";
+import { VisionSection } from "@/app/about/VisionSection";
+import { FounderSection } from "@/app/about/FounderSection";
 
 export default function AboutPage() {
   return (
