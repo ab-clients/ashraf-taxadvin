@@ -180,7 +180,7 @@ export const serviceDetails: ServiceDetail[] = [
     icon: HiBookOpen,
     description:
       "Meticulous books are the engine of tax savings. We categorize transactions correctly, reconcile on schedule, and design workflows that feed your strategy—not just your statements.",
-    showOnHomePage: true,
+    showOnHomePage: false,
     track: "business",
     sections: [
       {

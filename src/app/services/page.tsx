@@ -1,11 +1,6 @@
 import { serviceDetails } from "@/data/servcies";
 import Link from "next/link";
-import {
-  HiOfficeBuilding,
-  HiUser,
-  HiArrowRight,
-  HiSparkles,
-} from "react-icons/hi";
+import { HiOfficeBuilding, HiUser, HiArrowRight } from "react-icons/hi";
 
 export const metadata = {
   title:
