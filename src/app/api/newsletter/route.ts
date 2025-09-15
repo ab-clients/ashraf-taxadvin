@@ -1,12 +1,10 @@
 import { Resend } from "resend";
-import { v7 as uuidv7 } from "uuid";
 
 export async function POST(request: Request) {
   const resend = new Resend(process.env.RESEND_API_KEY);
 
   try {
     const { firstName, lastName, email } = await request.json();
-    const uuid = uuidv7();
 
     if (!email) {
       return new Response(JSON.stringify({ error: "Email is required" }), {
