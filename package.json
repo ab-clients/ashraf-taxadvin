@@ -19,6 +19,7 @@
     "date-fns": "^4.1.0",
     "date-fns-tz": "^3.2.0",
     "googleapis": "^159.0.0",
+    "geist": "^1.4.2",
     "lucide-react": "^0.536.0",
     "luxon": "^3.7.2",
     "next": "^15.5.2",

@@ -7,6 +7,7 @@ import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
 import TaxAdvinSchema from "@/components/TaxAdvinSchema";
 import { Seal } from "@/components/pages/home/Seal";
+import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://taxadvin.com"),
@@ -92,7 +93,11 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning className="!max-w-full">
+    <html
+      lang="en"
+      suppressHydrationWarning
+      className={`${GeistSans.className} !max-w-full`}
+    >
       <head>
         <TaxAdvinSchema />
         <GoogleAnalytics />
