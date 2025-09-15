@@ -27,12 +27,12 @@ export const FounderSection = () => {
                         mb-8
                         lg:float-left lg:w-[min(400px,50%)] lg:mr-8 lg:mb-6"
           >
-            <div className="w-24 h-24 mx-auto mb-4 overflow-hidden rounded-full border-4 border-white/20">
+            <div className="w-30 h-30 mx-auto mb-4 overflow-hidden rounded-full border-4 border-white/20">
               <Image
                 src={Ashraf}
                 alt="Ashraf Abdeltawab, CPA"
-                width={96}
-                height={96}
+                width={120}
+                height={120}
                 className="w-full h-full object-cover"
               />
             </div>
@@ -64,7 +64,7 @@ export const FounderSection = () => {
                 began his accounting journey in the early 2000s and earned his
                 CPA credentials after passing the California Board of
                 Accountancy&apos;s exams in 2008 and obtaining licensure in
-                North Dakota in 2016.
+                North Dakota.
               </p>
               <p>
                 Over more than two decades he has honed expertise in GAAP,

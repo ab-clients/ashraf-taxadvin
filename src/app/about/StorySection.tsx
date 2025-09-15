@@ -25,9 +25,9 @@ export const StorySection = () => {
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 <p>
                   TaxAdvin was born from a simple idea: to provide individuals,
-                  small businesses and nonprofits across the United States with
-                  trustworthy, proactive guidance in the ever-changing world of
-                  tax and finance.
+                  businesses of all sizes, and nonprofits across the United
+                  States with trustworthy, proactive guidance in the
+                  ever-changing world of tax and finance.
                 </p>
                 <p>
                   After more than two decades of working across public and

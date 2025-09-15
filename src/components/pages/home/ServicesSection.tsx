@@ -1,4 +1,5 @@
 import { serviceDetails } from "@/data/servcies";
+import Link from "next/link";
 
 export const ServicesSection = () => {
   const filteredServices = serviceDetails.filter(
@@ -21,26 +22,35 @@ export const ServicesSection = () => {
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredServices.map(({ title, description, icon: Icon }, idx) => (
-            <div
-              key={idx}
-              className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600"
-              data-aos="fade-up"
-              data-aos-delay={idx * 100}
-            >
-              <div className="w-14 h-14 bg-sky-100 dark:bg-sky-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
-                <Icon className="w-7 h-7 text-sky-600 dark:text-sky-400" />
-              </div>
-
-              <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
-                {title}
-              </h3>
-
-              <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
-                {description}
-              </p>
-            </div>
-          ))}
+          {filteredServices.map(
+            ({ title, description, icon: Icon, slug }, idx) => (
+              <Link
+                key={slug}
+                href={`/services/${slug}`}
+                className="group bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 dark:border-gray-700 hover:border-gray-200 dark:hover:border-gray-600 focus:outline-none focus:ring-2 focus:ring-sky-400"
+                data-aos="fade-up"
+                data-aos-delay={idx * 100}
+              >
+                <div className="w-14 h-14 bg-sky-100 dark:bg-sky-900 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
+                  <Icon className="w-7 h-7 text-sky-600 dark:text-sky-400" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-3">
+                  {title}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 leading-relaxed">
+                  {description}
+                </p>
+              </Link>
+            )
+          )}
+        </div>
+        <div className="mt-10 text-center">
+          <Link
+            href="/services"
+            className="inline-block px-6 py-3 rounded-xl bg-sky-600 text-white font-semibold shadow hover:bg-sky-700 transition-all duration-200"
+          >
+            View All Services
+          </Link>
         </div>
       </div>
     </section>
