@@ -17,7 +17,132 @@ import {
   HiFolder,
   HiSupport,
 } from "react-icons/hi";
+
 export const serviceDetails: ServiceDetail[] = [
+  {
+    slug: "virtual-cfo-financial-leadership",
+    title: "Fractional / Virtual CFO & Strategic Financial Leadership",
+    icon: HiChartPie,
+    description:
+      "CFO-level guidance without the full-time cost—financial department supervision, KPI discipline, and operational streamlining that drive tax savings and profit.",
+    showOnHomePage: false,
+    track: "business",
+    sections: [
+      {
+        heading: "Strategic Financial Oversight",
+        body: "Fractional CFO leadership integrates planning, controls, and tax strategy—keeping your financial cycle compliant and efficient.",
+      },
+      {
+        heading: "Rolling Cash Flow & Scenario Models",
+        body: "Forward-looking models and dashboards inform pricing, hiring, inventory, and financing decisions.",
+      },
+      {
+        heading: "KPI & Profitability Analysis",
+        body: "Track margins, unit economics, and pricing effectiveness—then act on what moves profit.",
+      },
+      {
+        heading: "Capital & ERP Planning Support",
+        body: "We support fundraising readiness, debt strategy, and system implementations (ERP/billing) tied to measurable ROI.",
+      },
+      {
+        heading: "Enterprise-Level Value, Fractional Cost",
+        body: "Get executive-grade clarity and roadmaps—minus the salary, benefits, and management overhead.",
+      },
+    ],
+  },
+  {
+    slug: "entity-formation-structuring",
+    title: "Entity Formation & Tax Structuring",
+    icon: HiOfficeBuilding,
+    description:
+      "Choose and set up the right structure (LLC, S-Corp, C-Corp, partnership) for liability protection, operational streamlining, and long-term tax savings.",
+    showOnHomePage: false,
+    track: "business",
+    sections: [
+      {
+        heading: "Legal & Tax Structure Advice",
+        body: "Structure choices affect liability, taxes, capital, and exit. We map options to goals—then execute.",
+      },
+      {
+        heading: "Formation & Compliance Filing",
+        body: "Articles/Operating Agreements, EINs, registrations, BOI filings, and annual reports handled end-to-end.",
+      },
+      {
+        heading: "Ownership & Governance Setup",
+        body: "Vesting, buy-sell, and shareholder agreements designed for clarity and future funding.",
+      },
+      {
+        heading: "Multi-State Presence Planning",
+        body: "Nexus analysis and registrations to minimize complexity and exposure across states.",
+      },
+      {
+        heading: "One-Sheet Tax Impact Summary",
+        body: "Every engagement ends with a one-page tax impact and governance roadmap you can reference year-round.",
+      },
+    ],
+  },
+  {
+    slug: "international-tax-compliance-planning",
+    title: "International Tax Compliance & Planning",
+    icon: HiGlobeAlt,
+    description:
+      "Cross-border done right: FBAR/FinCEN, foreign credits, treaty analysis, transfer pricing—reduce global exposure and avoid penalties.",
+    showOnHomePage: false,
+    track: "business",
+    sections: [
+      {
+        heading: "Cross-Border Tax Advisory",
+        body: "Inbound/outbound investments, global transactions, and distributed teams planned for compliance and efficiency.",
+      },
+      {
+        heading: "FBAR & Foreign Income Reporting",
+        body: "FBAR, FinCEN, foreign returns, and asset tracking—filed accurately to avoid penalties.",
+      },
+      {
+        heading: "Foreign Tax Credit Optimization",
+        body: "Leverage credits, withholding planning, and treaty provisions to prevent double taxation.",
+      },
+      {
+        heading: "Entity Structuring & Treaty Analysis",
+        body: "We structure entities and apply treaty rules to legally minimize taxes on cross-border flows.",
+      },
+      {
+        heading: "Global Compliance for U.S. Taxpayers",
+        body: "Offshore trusts, crypto, real estate, and estate planning for U.S. taxpayers with worldwide assets.",
+      },
+    ],
+  },
+  {
+    slug: "succession-exit-strategic-planning",
+    title: "Succession Planning & M&A Advisory",
+    icon: HiUserGroup,
+    description:
+      "Plan exits, partner transitions, and sales that preserve value and optimize after-tax proceeds.",
+    showOnHomePage: false,
+    track: "business",
+    sections: [
+      {
+        heading: "Exit & Transition Planning",
+        body: "Third-party sale, family transfer, or leadership change—structured for clarity and tax efficiency.",
+      },
+      {
+        heading: "Valuation & Deal Structuring",
+        body: "Valuations, buy-sell agreements, and deal terms engineered to maximize net proceeds.",
+      },
+      {
+        heading: "M&A & Transaction Advisory",
+        body: "Due diligence, QoE, negotiation support, and post-close integration for smooth, value-preserving outcomes.",
+      },
+      {
+        heading: "Ownership Continuity Governance",
+        body: "Governance that reduces disputes and safeguards continuity across stakeholders.",
+      },
+      {
+        heading: "Legacy & Financial Continuity",
+        body: "A transition that reflects your vision—financially sound, tax-aware, and execution-ready.",
+      },
+    ],
+  },
   {
     slug: "tax-preparation-planning",
     title: "Tax Return Preparation & Strategic Planning",
@@ -236,130 +361,6 @@ export const serviceDetails: ServiceDetail[] = [
     ],
   },
   {
-    slug: "virtual-cfo-financial-leadership",
-    title: "Fractional / Virtual CFO & Strategic Financial Leadership",
-    icon: HiChartPie,
-    description:
-      "CFO-level guidance without the full-time cost—financial department supervision, KPI discipline, and operational streamlining that drive tax savings and profit.",
-    showOnHomePage: false,
-    track: "business",
-    sections: [
-      {
-        heading: "Strategic Financial Oversight",
-        body: "Fractional CFO leadership integrates planning, controls, and tax strategy—keeping your financial cycle compliant and efficient.",
-      },
-      {
-        heading: "Rolling Cash Flow & Scenario Models",
-        body: "Forward-looking models and dashboards inform pricing, hiring, inventory, and financing decisions.",
-      },
-      {
-        heading: "KPI & Profitability Analysis",
-        body: "Track margins, unit economics, and pricing effectiveness—then act on what moves profit.",
-      },
-      {
-        heading: "Capital & ERP Planning Support",
-        body: "We support fundraising readiness, debt strategy, and system implementations (ERP/billing) tied to measurable ROI.",
-      },
-      {
-        heading: "Enterprise-Level Value, Fractional Cost",
-        body: "Get executive-grade clarity and roadmaps—minus the salary, benefits, and management overhead.",
-      },
-    ],
-  },
-  {
-    slug: "entity-formation-structuring",
-    title: "Entity Formation & Tax Structuring",
-    icon: HiOfficeBuilding,
-    description:
-      "Choose and set up the right structure (LLC, S-Corp, C-Corp, partnership) for liability protection, operational streamlining, and long-term tax savings.",
-    showOnHomePage: false,
-    track: "business",
-    sections: [
-      {
-        heading: "Legal & Tax Structure Advice",
-        body: "Structure choices affect liability, taxes, capital, and exit. We map options to goals—then execute.",
-      },
-      {
-        heading: "Formation & Compliance Filing",
-        body: "Articles/Operating Agreements, EINs, registrations, BOI filings, and annual reports handled end-to-end.",
-      },
-      {
-        heading: "Ownership & Governance Setup",
-        body: "Vesting, buy-sell, and shareholder agreements designed for clarity and future funding.",
-      },
-      {
-        heading: "Multi-State Presence Planning",
-        body: "Nexus analysis and registrations to minimize complexity and exposure across states.",
-      },
-      {
-        heading: "One-Sheet Tax Impact Summary",
-        body: "Every engagement ends with a one-page tax impact and governance roadmap you can reference year-round.",
-      },
-    ],
-  },
-  {
-    slug: "international-tax-compliance-planning",
-    title: "International Tax Compliance & Planning",
-    icon: HiGlobeAlt,
-    description:
-      "Cross-border done right: FBAR/FinCEN, foreign credits, treaty analysis, transfer pricing—reduce global exposure and avoid penalties.",
-    showOnHomePage: false,
-    track: "business",
-    sections: [
-      {
-        heading: "Cross-Border Tax Advisory",
-        body: "Inbound/outbound investments, global transactions, and distributed teams planned for compliance and efficiency.",
-      },
-      {
-        heading: "FBAR & Foreign Income Reporting",
-        body: "FBAR, FinCEN, foreign returns, and asset tracking—filed accurately to avoid penalties.",
-      },
-      {
-        heading: "Foreign Tax Credit Optimization",
-        body: "Leverage credits, withholding planning, and treaty provisions to prevent double taxation.",
-      },
-      {
-        heading: "Entity Structuring & Treaty Analysis",
-        body: "We structure entities and apply treaty rules to legally minimize taxes on cross-border flows.",
-      },
-      {
-        heading: "Global Compliance for U.S. Taxpayers",
-        body: "Offshore trusts, crypto, real estate, and estate planning for U.S. taxpayers with worldwide assets.",
-      },
-    ],
-  },
-  {
-    slug: "succession-exit-strategic-planning",
-    title: "Succession Planning & M&A Advisory",
-    icon: HiUserGroup,
-    description:
-      "Plan exits, partner transitions, and sales that preserve value and optimize after-tax proceeds.",
-    showOnHomePage: false,
-    track: "business",
-    sections: [
-      {
-        heading: "Exit & Transition Planning",
-        body: "Third-party sale, family transfer, or leadership change—structured for clarity and tax efficiency.",
-      },
-      {
-        heading: "Valuation & Deal Structuring",
-        body: "Valuations, buy-sell agreements, and deal terms engineered to maximize net proceeds.",
-      },
-      {
-        heading: "M&A & Transaction Advisory",
-        body: "Due diligence, QoE, negotiation support, and post-close integration for smooth, value-preserving outcomes.",
-      },
-      {
-        heading: "Ownership Continuity Governance",
-        body: "Governance that reduces disputes and safeguards continuity across stakeholders.",
-      },
-      {
-        heading: "Legacy & Financial Continuity",
-        body: "A transition that reflects your vision—financially sound, tax-aware, and execution-ready.",
-      },
-    ],
-  },
-  {
     slug: "individual-bookkeeping-organization",
     title: "Financial Organization & Bookkeeping for Individuals",
     icon: HiFolder,
@@ -449,6 +450,37 @@ export const serviceDetails: ServiceDetail[] = [
       {
         heading: "Financial Recovery Planning",
         body: "Long-term planning to rebuild financial stability while optimizing tax strategies during recovery periods and major life transitions.",
+      },
+    ],
+  },
+  {
+    slug: "self-employed-accounting",
+    title: "Self-Employed & Freelancer Accounting",
+    icon: HiCalculator,
+    description:
+      "Specialized accounting, tax planning, and compliance for freelancers, gig workers, and self-employed individuals. Maximize deductions, manage quarterly taxes, and keep your business finances stress-free.",
+    showOnHomePage: true,
+    track: "individual",
+    sections: [
+      {
+        heading: "Tax Optimization for Self-Employed",
+        body: "Identify every legal deduction—home office, mileage, equipment, retirement contributions, and more—to minimize your tax bill.",
+      },
+      {
+        heading: "Quarterly Tax Planning & Payments",
+        body: "Never miss an estimated payment. We calculate, schedule, and help you avoid penalties and surprises.",
+      },
+      {
+        heading: "Bookkeeping & Income Tracking",
+        body: "Simple, streamlined bookkeeping solutions tailored for solo businesses and freelancers—so you always know where you stand.",
+      },
+      {
+        heading: "1099, Schedule C, and Compliance",
+        body: "We handle all forms and filings, including 1099s, Schedule C, and self-employment tax, so you stay compliant and audit-ready.",
+      },
+      {
+        heading: "Business Growth Guidance",
+        body: "From entity selection to retirement planning, we advise on every step as your solo business grows.",
       },
     ],
   },

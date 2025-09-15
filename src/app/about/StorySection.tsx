@@ -8,19 +8,20 @@ export const StorySection = () => {
   return (
     <section id="story" className="py-10 px-6 lg:px-8 relative">
       <div className="max-w-6xl mx-auto">
-        {/* Modern Card Layout */}
+        {/* Modern Card Layout with Responsive Float */}
         <div className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm rounded-3xl p-8 lg:p-12 shadow-xl border border-gray-100 dark:border-gray-700">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
+          <div className="text-center mb-12">
+            <span className="inline-flex items-center px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-900/50 text-sky-800 dark:text-sky-200 text-sm font-medium mb-4">
+              Our Journey
+            </span>
+            <h2 className="text-3xl sm:text-4xl font-bold text-sky-600 dark:text-yellow-300 mb-6">
+              Our Story
+            </h2>
+          </div>
+          <div className="flex flex-col lg:flex-row gap-12 items-start">
             {/* Content */}
-            <div>
-              <div className="inline-flex items-center px-3 py-1 rounded-full bg-sky-100 dark:bg-sky-900/50 text-sky-800 dark:text-sky-200 text-sm font-medium mb-6">
-                Our Journey
-              </div>
-
-              <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6 leading-tight">
-                Our Story
-              </h2>
-
+            <div className="flex-1">
+              {/* Content */}
               <div className="space-y-6 text-lg text-gray-700 dark:text-gray-300 leading-relaxed">
                 <p>
                   TaxAdvin was born from a simple idea: to provide individuals,
@@ -43,8 +44,8 @@ export const StorySection = () => {
               </div>
             </div>
 
-            {/* Visual Element */}
-            <div className="relative">
+            {/* Visual Element floats right on lg+, stacks below on mobile */}
+            <div className="w-full lg:w-1/3 lg:max-w-xs mt-8 lg:mt-0 lg:ml-auto">
               <div className="bg-gradient-to-br from-sky-400 via-blue-500 to-indigo-600 rounded-2xl p-8 text-white">
                 <div className="space-y-6">
                   <div className="flex items-center space-x-3">

@@ -12,7 +12,7 @@ export const VisionSection = () => {
               Looking Forward
             </div>
 
-            <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-100 mb-6">
+            <h2 className="text-3xl sm:text-4xl font-bold text-sky-700 dark:text-yellow-300 mb-6">
               Our Vision
             </h2>
 

@@ -20,7 +20,7 @@ export const HeroSection = () => (
     </div>
 
     {/* Content */}
-    <div className="relative z-10 max-w-5xl mx-auto px-6 py-8 sm:py-24 text-center">
+    <div className="relative z-10 max-w-5xl mx-auto px-6 py-8 sm:py-16 text-center">
       <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
         Your <span className="text-yellow-300">Fractional CFO</span> Partner for
         <span className="animate-pulse"> Maximum Tax Savings</span>

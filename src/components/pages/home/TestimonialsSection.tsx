@@ -21,7 +21,7 @@ export const TestimonialsSection = () => {
               data-aos="flip-left"
               data-aos-delay={index * 100}
             >
-              <p className="text-sm text-gray-700 dark:text-gray-300 flex-grow">
+              <p className="text-sm text-gray-700 dark:text-gray-300 flex-grow italic">
                 “{testimonial.quote}”
               </p>
               <div className="mt-4 flex items-center">

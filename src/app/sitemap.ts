@@ -50,7 +50,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     },
   ];
 
-  // Dynamic service pages
+  // Dynamic service pages (auto-includes all services in serviceDetails, including new additions)
   const servicePages: MetadataRoute.Sitemap = serviceDetails.map((service) => ({
     url: `${baseUrl}/services/${service.slug}`,
     lastModified: new Date(),

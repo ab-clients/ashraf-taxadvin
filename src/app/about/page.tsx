@@ -17,8 +17,8 @@ export default function AboutPage() {
         </p>
       </div>
 
-      <StorySection />
       <FounderSection />
+      <StorySection />
       <MissionStatementSection />
       <VisionSection />
     </section>
