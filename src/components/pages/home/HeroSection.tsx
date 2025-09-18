@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import HomeHero from "@/assets/videos/home-hero.gif";
+import { FaEnvelope, FaPhone } from "react-icons/fa6";
 
 export const HeroSection = () => (
   <section className="relative overflow-hidden text-white">
@@ -20,15 +21,15 @@ export const HeroSection = () => (
     </div>
 
     {/* Content */}
-    <div className="relative z-10 max-w-5xl mx-auto px-6 py-8 sm:py-16 text-center">
-      <h1 className="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
+    <div className="relative z-10 max-w-5xl mx-auto px-6 py-6 sm:py-12 text-center">
+      <h1 className="text-3xl sm:text-5xl md:text-6xl font-extrabold leading-tight">
         Your <span className="text-yellow-300">Fractional CFO</span> Partner for
-        <span className="animate-pulse"> Maximum Tax Savings</span>
+        <div className="inline-block animate-pulse"> Maximum Tax Savings</div>
       </h1>
       <p className="mt-6 max-w-2xl mx-auto text-lg sm:text-xl text-sky-100">
-        We don&apos;t just file your taxes, we supervise your financial
-        department, streamline operations, and unlock tax savings you
-        didn&apos;t know were possible.
+        We don&apos;t just file your taxes - we transform struggling operations
+        into a profitable, high-value business while unlocking tax savings you
+        never knew were possible.
       </p>
       <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
         <Link
@@ -44,6 +45,13 @@ export const HeroSection = () => (
           Learn More
         </Link>
       </div>
+      <p className="mt-6 max-w-2xl mx-auto text-sm text-sky-200 underline">
+        <FaPhone size={16} className="inline-block mr-1" />
+        <a href="tel:+14077267901">(407) 726-7901</a>
+        <span className="mx-2">|</span>
+        <FaEnvelope size={16} className="inline-block mr-1" />
+        <a href="mailto:contact@taxadvin.com">contact@taxadvin.com</a>
+      </p>
     </div>
   </section>
 );

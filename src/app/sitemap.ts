@@ -1,5 +1,6 @@
+import { individualServices } from "./../data/services/allServicesData";
+import { businessServices } from "@/data/services/allServicesData";
 import { MetadataRoute } from "next";
-import { serviceDetails } from "@/data/servcies";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://taxadvin.com";
@@ -51,12 +52,23 @@ export default function sitemap(): MetadataRoute.Sitemap {
   ];
 
   // Dynamic service pages (auto-includes all services in serviceDetails, including new additions)
-  const servicePages: MetadataRoute.Sitemap = serviceDetails.map((service) => ({
-    url: `${baseUrl}/services/${service.slug}`,
-    lastModified: new Date(),
-    changeFrequency: "monthly" as const,
-    priority: service.track === "business" ? 0.8 : 0.7,
-  }));
+  const businessServicePages: MetadataRoute.Sitemap = businessServices.map(
+    (service) => ({
+      url: `${baseUrl}/services/${service.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    })
+  );
 
-  return [...staticPages, ...servicePages];
+  const individualServicePages: MetadataRoute.Sitemap = individualServices.map(
+    (service) => ({
+      url: `${baseUrl}/services/${service.slug}`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    })
+  );
+
+  return [...staticPages, ...businessServicePages, ...individualServicePages];
 }

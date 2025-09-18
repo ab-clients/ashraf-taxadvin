@@ -1,4 +1,7 @@
-import { serviceDetails } from "@/data/servcies";
+import {
+  businessServices,
+  individualServices,
+} from "@/data/services/allServicesData";
 import Link from "next/link";
 import { HiOfficeBuilding, HiUser, HiArrowRight } from "react-icons/hi";
 
@@ -10,14 +13,6 @@ export const metadata = {
 };
 
 export default function ServicesPage() {
-  const businessServiceData = serviceDetails.filter(
-    (service) => service.track === "business"
-  );
-
-  const individualServiceData = serviceDetails.filter(
-    (service) => service.track === "individual"
-  );
-
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
       {/* Services Tracks */}
@@ -56,7 +51,7 @@ export default function ServicesPage() {
 
             <div className="p-8">
               <div className="space-y-6">
-                {businessServiceData.map((service, index) => (
+                {businessServices.map((service, index) => (
                   <div
                     key={service.slug}
                     className="group cursor-pointer"
@@ -107,7 +102,7 @@ export default function ServicesPage() {
 
             <div className="p-8">
               <div className="space-y-6">
-                {individualServiceData.map((service, index) => (
+                {individualServices.map((service, index) => (
                   <div
                     key={service.slug}
                     className="group cursor-pointer"

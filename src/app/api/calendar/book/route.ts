@@ -6,15 +6,16 @@ interface BookingRequest {
   name: string;
   email: string;
   phone: string;
+  meetingType: "" | "in-person" | "virtual";
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body: BookingRequest = await request.json();
-    const { dateTime, name, email, phone } = body;
+    const { dateTime, name, email, phone, meetingType } = body;
 
     // Validate required fields
-    if (!dateTime || !name || !email || !phone) {
+    if (!dateTime || !name || !email || !phone || !meetingType) {
       return NextResponse.json(
         { error: "All fields are required" },
         { status: 400 }
@@ -75,6 +76,7 @@ Client Information:
 - Name: ${name}
 - Email: ${email}
 - Phone: ${phone}
+- Meeting Type: ${meetingType === "in-person" ? "In Person" : "Virtual (Google Meet)"}
 
 This is a 30-minute consultation appointment booked through the TaxAdvin website.
 
@@ -104,7 +106,7 @@ Note: Client will need to be contacted separately to send calendar invitation.
     const response = await calendar.events.insert({
       calendarId: calendarId,
       requestBody: event,
-      sendUpdates: "none", // Don't send email invitations
+      sendUpdates: "all", // Don't send email invitations
     });
 
     // Create grace period event (15 minutes after the main appointment)
@@ -172,6 +174,7 @@ Previous appointment:
     if (errorCode === 403) {
       userFriendlyMessage = "Permission denied. Please contact support.";
     } else if (errorCode === 409) {
+      console.log("ERROR", error, errorMessage);
       userFriendlyMessage = "This time slot is no longer available.";
     }
 

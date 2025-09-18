@@ -1,25 +1,38 @@
-import { serviceDetails } from "@/data/servcies";
 import { notFound } from "next/navigation";
 import { HiArrowLeft, HiCheckCircle } from "react-icons/hi";
 import Link from "next/link";
+import {
+  allServices,
+  businessServices,
+  individualServices,
+} from "@/data/services/allServicesData";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
 }
 
 export async function generateStaticParams() {
-  return serviceDetails.map((service) => ({
+  return allServices.map((service) => ({
     slug: service.slug,
   }));
 }
 
 export default async function ServiceDetailPage({ params }: PageProps) {
   const { slug } = await params;
-  const service = serviceDetails.find((s) => s.slug === slug);
+  const service = allServices.find((s) => s.slug === slug);
 
   if (!service) return notFound();
 
-  const trackColor = service.track === "business" ? "sky" : "emerald";
+  // Determine track color for styling
+  // Business track: blue shades, Individual track: green shades
+
+  const isBusiness = businessServices.some((s) => s.slug === slug);
+  const isIndividual = individualServices.some((s) => s.slug === slug);
+
+  let trackColor: "sky" | "emerald" | "gray" = "gray"; // default
+  if (isIndividual) trackColor = "emerald";
+  else if (isBusiness) trackColor = "sky";
+
   const trackColorClasses = {
     sky: {
       icon: "text-sky-600 dark:text-sky-400",
@@ -36,9 +49,21 @@ export default async function ServiceDetailPage({ params }: PageProps) {
       accent: "text-emerald-600 dark:text-emerald-400",
       button: "bg-emerald-600 hover:bg-emerald-700",
     },
+    gray: {
+      icon: "text-gray-600 dark:text-gray-400",
+      badge: "bg-gray-100 dark:bg-gray-900 text-gray-700 dark:text-gray-300",
+      card: "border-gray-200 dark:border-gray-800",
+      accent: "text-gray-600 dark:text-gray-400",
+      button: "bg-gray-600 hover:bg-gray-700",
+    },
   };
 
   const colors = trackColorClasses[trackColor];
+
+  const source = isBusiness ? businessServices : individualServices;
+  const relatedServices = source
+    .filter((s) => s.slug !== service.slug)
+    .slice(0, 3);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-50 dark:from-gray-900 dark:to-gray-800">
@@ -64,9 +89,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
               <div
                 className={`inline-flex items-center px-3 py-1 rounded-full text-xs font-medium ${colors.badge} mb-2`}
               >
-                {service.track === "business"
-                  ? "Business Service"
-                  : "Individual Service"}
+                {isBusiness ? "Business Service" : "Individual Service"}
               </div>
               <h1 className="text-4xl font-bold text-gray-900 dark:text-white">
                 {service.title}
@@ -90,7 +113,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
             >
               <div className="flex items-start gap-3 mb-4">
                 <div
-                  className={`flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r ${service.track === "business" ? "from-sky-500 to-blue-500" : "from-emerald-500 to-teal-500"} flex items-center justify-center`}
+                  className={`flex-shrink-0 w-6 h-6 rounded-full bg-gradient-to-r ${isBusiness ? "from-sky-500 to-blue-500" : "from-emerald-500 to-teal-500"} flex items-center justify-center`}
                 >
                   <HiCheckCircle className="w-4 h-4 text-white" />
                 </div>
@@ -136,35 +159,29 @@ export default async function ServiceDetailPage({ params }: PageProps) {
         {/* Related Services */}
         <div className="mt-12">
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-6">
-            Other {service.track === "business" ? "Business" : "Individual"}{" "}
-            Services
+            Other {isBusiness ? "Business" : "Individual"} Services
           </h3>
 
           <div className="grid md:grid-cols-3 gap-4">
-            {serviceDetails
-              .filter(
-                (s) => s.track === service.track && s.slug !== service.slug
-              )
-              .slice(0, 3)
-              .map((relatedService, index) => (
-                <Link
-                  key={relatedService.slug}
-                  href={`/services/${relatedService.slug}`}
-                  className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700"
-                  data-aos="fade-up"
-                  data-aos-delay={index * 100}
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <relatedService.icon className={`w-6 h-6 ${colors.icon}`} />
-                    <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
-                      {relatedService.title}
-                    </h4>
-                  </div>
-                  <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2">
-                    {relatedService.description}
-                  </p>
-                </Link>
-              ))}
+            {relatedServices.map((relatedService, index) => (
+              <Link
+                key={relatedService.slug}
+                href={`/services/${relatedService.slug}`}
+                className="group bg-white dark:bg-gray-800 rounded-xl p-6 shadow-md hover:shadow-lg transition-all duration-300 border border-gray-200 dark:border-gray-700"
+                data-aos="fade-up"
+                data-aos-delay={index * 100}
+              >
+                <div className="flex items-center gap-3 mb-3">
+                  <relatedService.icon className={`w-6 h-6 ${colors.icon}`} />
+                  <h4 className="font-semibold text-gray-900 dark:text-white group-hover:text-sky-600 dark:group-hover:text-sky-400 transition-colors">
+                    {relatedService.title}
+                  </h4>
+                </div>
+                <p className="text-gray-600 dark:text-gray-300 text-sm line-clamp-2">
+                  {relatedService.description}
+                </p>
+              </Link>
+            ))}
           </div>
         </div>
       </div>

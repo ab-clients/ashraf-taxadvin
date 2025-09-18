@@ -1,11 +1,7 @@
-import { serviceDetails } from "@/data/servcies";
+import { homepageServices } from "@/data/services/allServicesData";
 import Link from "next/link";
 
 export const ServicesSection = () => {
-  const filteredServices = serviceDetails.filter(
-    (service) => service.showOnHomePage !== false
-  );
-
   return (
     <section
       id="services"
@@ -22,7 +18,7 @@ export const ServicesSection = () => {
         </div>
 
         <div className="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
-          {filteredServices.map(
+          {homepageServices.map(
             ({ title, description, icon: Icon, slug }, idx) => (
               <Link
                 key={slug}

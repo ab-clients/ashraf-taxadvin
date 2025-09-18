@@ -9,6 +9,9 @@ export interface ServiceDetail {
   icon: React.ElementType; // react-icon component
   description: string; // one-liner from home page
   sections: ServiceSection[]; // sections with heading and body
-  showOnHomePage?: boolean; // optional, default false
-  track: "business" | "individual"; // service track classification
 }
+
+export type ServicesData = {
+  individualTrack: ServiceDetail[];
+  businessTrack: ServiceDetail[];
+};

@@ -3,6 +3,17 @@
 import { useState } from "react";
 import { HiOutlineCalendar, HiOutlineClock } from "react-icons/hi";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
+import {
+  Select,
+  SelectTrigger,
+  SelectValue,
+  SelectContent,
+  SelectItem,
+  SelectLabel,
+  SelectGroup,
+} from "@/components/ui/select";
+import { Input } from "@/components/ui/input";
+import { flippers } from "@/data/appData/flippers";
 
 interface CalendarBookingProps {
   onBookingSuccess: () => void;
@@ -18,6 +29,7 @@ interface BookingFormData {
   name: string;
   email: string;
   phone: string;
+  meetingType: "" | "in-person" | "virtual";
 }
 
 export default function CalendarBooking({
@@ -31,6 +43,7 @@ export default function CalendarBooking({
     name: "",
     email: "",
     phone: "",
+    meetingType: flippers.enableCalendarBookingMeetingType ? "" : "virtual",
   });
   const [isLoadingSlots, setIsLoadingSlots] = useState(false);
   const [isBooking, setIsBooking] = useState(false);
@@ -136,6 +149,7 @@ export default function CalendarBooking({
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
+          meetingType: formData.meetingType,
         }),
       });
 
@@ -229,13 +243,13 @@ export default function CalendarBooking({
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Select a date for your appointment
           </label>
-          <input
+          <Input
             type="date"
             value={selectedDate}
             min={today}
             max={maxDateString}
             onChange={(e) => handleDateChange(e.target.value)}
-            className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500 dark:bg-gray-700 dark:text-white"
+            className="rounded-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 placeholder-gray-600 dark:placeholder-gray-400 focus:border-sky-400 focus:ring-sky-400/40 transition-colors"
             disabled={isLoadingSlots}
           />
           <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
@@ -368,14 +382,14 @@ export default function CalendarBooking({
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Full Name *
               </label>
-              <input
+              <Input
                 type="text"
                 required
                 value={formData.name}
                 onChange={(e) =>
                   setFormData({ ...formData, name: e.target.value })
                 }
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500 dark:bg-gray-700 dark:text-white"
+                className="rounded-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 placeholder-gray-600 dark:placeholder-gray-400 focus:border-sky-400 focus:ring-sky-400/40 transition-colors"
                 placeholder="Enter your full name"
               />
             </div>
@@ -384,14 +398,14 @@ export default function CalendarBooking({
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Email Address *
               </label>
-              <input
+              <Input
                 type="email"
                 required
                 value={formData.email}
                 onChange={(e) =>
                   setFormData({ ...formData, email: e.target.value })
                 }
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500 dark:bg-gray-700 dark:text-white"
+                className="rounded-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 placeholder-gray-600 dark:placeholder-gray-400 focus:border-sky-400 focus:ring-sky-400/40 transition-colors"
                 placeholder="Enter your email address"
               />
             </div>
@@ -400,24 +414,68 @@ export default function CalendarBooking({
               <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                 Phone Number *
               </label>
-              <input
+              <Input
                 type="tel"
                 required
                 value={formData.phone}
                 onChange={(e) =>
                   setFormData({ ...formData, phone: e.target.value })
                 }
-                className="w-full px-4 py-3 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-sky-500 focus:border-sky-500 dark:bg-gray-700 dark:text-white"
+                className="rounded-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 placeholder-gray-600 dark:placeholder-gray-400 focus:border-sky-400 focus:ring-sky-400/40 transition-colors"
                 placeholder="Enter your phone number"
               />
             </div>
+
+            {flippers.enableCalendarBookingMeetingType && (
+              <div>
+                <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+                  Meeting Type *
+                </label>
+                <Select
+                  value={formData.meetingType}
+                  onValueChange={(value) =>
+                    setFormData({
+                      ...formData,
+                      meetingType: value as "" | "in-person" | "virtual",
+                    })
+                  }
+                  required
+                >
+                  <SelectTrigger
+                    id="meetingType"
+                    className="rounded-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 
+            text-gray-900 dark:text-gray-100 placeholder-gray-600 dark:placeholder-gray-400 
+            focus:border-sky-400 focus:ring-sky-400/40 transition-colors"
+                  >
+                    <SelectValue
+                      placeholder="Select meeting type"
+                      className="text-gray-600 dark:text-gray-400"
+                    />
+                  </SelectTrigger>
+                  <SelectContent
+                    className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 
+            shadow-lg rounded-md mt-1 p-0"
+                  >
+                    <SelectGroup>
+                      <SelectLabel>Meeting Types</SelectLabel>
+                      <SelectItem value="virtual">
+                        Virtual (Google Meet)
+                      </SelectItem>
+                      <SelectItem value="in-person">In Person</SelectItem>
+                    </SelectGroup>
+                  </SelectContent>
+                </Select>
+              </div>
+            )}
 
             <div className="bg-sky-50 dark:bg-sky-900 p-4 rounded-md">
               <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-2">
                 What to expect:
               </h4>
               <ul className="text-sm text-gray-700 dark:text-gray-300 space-y-1">
-                <li>• 30-minute focused consultation with our licensed CPA</li>
+                <li>
+                  • FREE 30-minute focused consultation with our licensed CPA
+                </li>
                 <li>• Personalized tax and accounting advice</li>
                 <li>• We&apos;ll contact you to confirm the appointment</li>
                 <li>• Calendar invitation will be sent separately</li>

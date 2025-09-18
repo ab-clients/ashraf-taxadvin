@@ -42,11 +42,6 @@ export default function BookingSuccess({ onBookAnother }: BookingSuccessProps) {
             will be sent to add the meeting to your calendar
           </li>
           <li className="flex items-start">
-            <span className="font-medium mr-2">⏰</span>
-            You&apos;ll get reminder emails 24 hours and 1 hour before the
-            meeting
-          </li>
-          <li className="flex items-start">
             <span className="font-medium mr-2">💼</span>
             Prepare any documents or questions you&apos;d like to discuss
           </li>
