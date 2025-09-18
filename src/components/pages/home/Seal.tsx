@@ -25,7 +25,7 @@ export const Seal = () => {
         }}
         aria-label="Close certification seal"
       >
-        <div className="sticky top-0 z-50 bg-neutral-100 dark:bg-neutral-950 shadow-md py-2">
+        <div className="sticky top-0 z-30 bg-neutral-100 dark:bg-neutral-950 shadow-md py-2">
           <div className="bg-yellow-300/10 dark:bg-yellow-600/20 backdrop-blur-sm border-2 border-yellow-400/30 dark:border-yellow-500/40 rounded-lg px-4 py-3 sm:px-6 sm:py-4 shadow-md mx-4">
             <div className="border-2 border-dashed border-yellow-400/40 dark:border-yellow-500/50 rounded p-2 sm:p-3">
               <div className="text-center">
@@ -39,7 +39,7 @@ export const Seal = () => {
       </div>
 
       <div
-        className="hidden md:block fixed bottom-12 right-8 z-100 hover:scale-105 transition-transform duration-100 "
+        className="hidden md:block fixed bottom-12 right-8 z-40 hover:scale-105 transition-transform duration-100 "
         onClick={handleClick}
         role="button"
         tabIndex={0}
