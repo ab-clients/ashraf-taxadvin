@@ -6,7 +6,7 @@ interface TimeSlot {
   reason?: string;
 }
 
-interface BookingFormData {
+export interface BookingFormData {
   name: string;
   email: string;
   phone: string;

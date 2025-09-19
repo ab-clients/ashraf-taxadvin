@@ -22,10 +22,6 @@ export default function BookAppointmentPage() {
     dispatch(setBookingComplete(false));
   };
 
-  const handleBookingSuccess = () => {
-    dispatch(setBookingComplete(true));
-  };
-
   const handleBookAnother = () => {
     dispatch(setShowBookingForm(true));
     dispatch(setBookingComplete(false));
@@ -55,7 +51,7 @@ export default function BookAppointmentPage() {
                 ← Back to booking options
               </button>
             </div>
-            <CalendarBooking onBookingSuccess={handleBookingSuccess} />
+            <CalendarBooking />
           </div>
         )}
 
