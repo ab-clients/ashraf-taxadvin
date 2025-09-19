@@ -7,6 +7,7 @@ import { Header } from "@/components/ui/Header";
 import { Footer } from "@/components/ui/Footer";
 import TaxAdvinSchema from "@/components/TaxAdvinSchema";
 import { Seal } from "@/components/pages/home/Seal";
+import { ReduxProvider } from "@/store/ReduxProvider";
 import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
@@ -109,14 +110,16 @@ export default function RootLayout({
       <body className="!overflow-x-hidden">
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <AOSProvider>
-            <div className="min-h-screen flex flex-col">
-              <Header />
-              <Seal />
-              <main className="flex-1 bg-gray-200 dark:bg-gray-800">
-                {children}
-              </main>
-              <Footer />
-            </div>
+            <ReduxProvider>
+              <div className="min-h-screen flex flex-col">
+                <Header />
+                <Seal />
+                <main className="flex-1 bg-gray-200 dark:bg-gray-800">
+                  {children}
+                </main>
+                <Footer />
+              </div>
+            </ReduxProvider>
           </AOSProvider>
         </ThemeProvider>
       </body>

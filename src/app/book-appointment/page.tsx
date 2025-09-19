@@ -1,7 +1,9 @@
 "use client";
 
-import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import type { RootState, AppDispatch } from "@/store/index";
 import CalendarBooking from "@/app/book-appointment/CalendarBooking";
+import { setShowBookingForm, setBookingComplete } from "@/store/bookingSlice";
 import BookingSuccess from "@/app/book-appointment/BookingSuccess";
 import BookingHeader from "@/app/book-appointment/BookingHeader";
 import OnlineBookingCTA from "@/app/book-appointment/OnlineBookingCTA";
@@ -10,26 +12,28 @@ import FeaturesPreview from "@/app/book-appointment/FeaturesPreview";
 
 // Note: Metadata cannot be used in client components, so we'll handle this differently
 export default function BookAppointmentPage() {
-  const [showBookingForm, setShowBookingForm] = useState(false);
-  const [bookingComplete, setBookingComplete] = useState(false);
+  const dispatch = useDispatch<AppDispatch>();
+  const { showBookingForm, bookingComplete } = useSelector(
+    (s: RootState) => s.booking
+  );
 
   const handleStartBooking = () => {
-    setShowBookingForm(true);
-    setBookingComplete(false);
+    dispatch(setShowBookingForm(true));
+    dispatch(setBookingComplete(false));
   };
 
   const handleBookingSuccess = () => {
-    setBookingComplete(true);
+    dispatch(setBookingComplete(true));
   };
 
   const handleBookAnother = () => {
-    setShowBookingForm(true);
-    setBookingComplete(false);
+    dispatch(setShowBookingForm(true));
+    dispatch(setBookingComplete(false));
   };
 
   const handleBackToOptions = () => {
-    setShowBookingForm(false);
-    setBookingComplete(false);
+    dispatch(setShowBookingForm(false));
+    dispatch(setBookingComplete(false));
   };
 
   return (

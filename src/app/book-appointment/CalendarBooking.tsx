@@ -1,6 +1,8 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import type { RootState, AppDispatch } from "@/store/index";
 import { HiOutlineCalendar, HiOutlineClock } from "react-icons/hi";
 import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import {
@@ -13,50 +15,50 @@ import {
   SelectGroup,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
+import { Calendar } from "@/components/ui/calendar";
 import { flippers } from "@/data/appData/flippers";
+import {
+  setSelectedDate,
+  setSelectedTime,
+  setAvailableSlots,
+  setAllSlots,
+  setFormData,
+  setIsLoadingSlots,
+  setIsBooking,
+  setAvailabilityError,
+  setFormError,
+  setStep,
+} from "@/store/bookingSlice";
 
 interface CalendarBookingProps {
   onBookingSuccess: () => void;
 }
 
-interface TimeSlot {
+type TimeSlot = {
   time: string;
   available: boolean;
   reason?: string;
-}
-
-interface BookingFormData {
-  name: string;
-  email: string;
-  phone: string;
-  meetingType: "" | "in-person" | "virtual";
-}
+};
 
 export default function CalendarBooking({
   onBookingSuccess,
 }: CalendarBookingProps) {
-  const [selectedDate, setSelectedDate] = useState<string>("");
-  const [selectedTime, setSelectedTime] = useState<string>("");
-  const [availableSlots, setAvailableSlots] = useState<string[]>([]);
-  const [allSlots, setAllSlots] = useState<TimeSlot[]>([]);
-  const [formData, setFormData] = useState<BookingFormData>({
-    name: "",
-    email: "",
-    phone: "",
-    meetingType: flippers.enableCalendarBookingMeetingType ? "" : "virtual",
-  });
-  const [isLoadingSlots, setIsLoadingSlots] = useState(false);
-  const [isBooking, setIsBooking] = useState(false);
-  const [error, setError] = useState<string>("");
-  const [step, setStep] = useState<"date" | "time" | "details">("date");
+  const dispatch = useDispatch<AppDispatch>();
 
-  // Get today's date in YYYY-MM-DD format for min date
-  const today = new Date().toISOString().split("T")[0];
+  const {
+    selectedDate,
+    selectedTime,
+    availableSlots,
+    allSlots,
+    formData,
+    isLoadingSlots,
+    isBooking,
+    availabilityError,
+    formError,
+    step,
+  } = useSelector((state: RootState) => state.booking);
 
-  // Get date 30 days from now for max date
-  const maxDate = new Date();
-  maxDate.setDate(maxDate.getDate() + 30);
-  const maxDateString = maxDate.toISOString().split("T")[0];
+  // min/max date constraints handled by Calendar component
 
   // Check if a date is a weekend
   const isWeekend = (dateString: string) => {
@@ -66,56 +68,75 @@ export default function CalendarBooking({
     return dayOfWeek === 0 || dayOfWeek === 6; // Sunday = 0, Saturday = 6
   };
 
-  const handleDateChange = async (date: string) => {
-    setSelectedDate(date);
-    setSelectedTime("");
-    setError("");
-    setIsLoadingSlots(true);
+  // Load slots when selectedDate changes (including initial mount)
+  useEffect(() => {
+    if (!selectedDate) return;
 
-    // Check if selected date is a weekend
-    if (isWeekend(date)) {
-      setError(
-        "Appointments are not available on weekends. Please select a weekday (Monday-Friday)."
-      );
-      setAvailableSlots([]);
-      setIsLoadingSlots(false);
-      return;
-    }
+    const load = async (date: string) => {
+      dispatch(setAvailabilityError(""));
+      dispatch(setIsLoadingSlots(true));
 
-    try {
-      const response = await fetch(`/api/calendar/availability?date=${date}`);
-      const data = await response.json();
-
-      if (data.success) {
-        setAvailableSlots(data.availableSlots);
-        setAllSlots(data.allSlots || []);
-        setStep("time");
-      } else {
-        setError(data.error || "Failed to load available times");
-        setAvailableSlots([]);
-        setAllSlots([]);
+      if (isWeekend(date)) {
+        dispatch(
+          setAvailabilityError(
+            "Appointments are not available on weekends. Please select a weekday (Monday-Friday)."
+          )
+        );
+        dispatch(setAvailableSlots([]));
+        dispatch(setAllSlots([]));
+        dispatch(setIsLoadingSlots(false));
+        return;
       }
-    } catch {
-      setError("Failed to load available times. Please try again.");
-      setAvailableSlots([]);
-      setAllSlots([]);
-    } finally {
-      setIsLoadingSlots(false);
-    }
-  };
+
+      try {
+        const response = await fetch(`/api/calendar/availability?date=${date}`);
+        const data = await response.json();
+
+        if (data.success) {
+          dispatch(setAvailableSlots(data.availableSlots));
+          dispatch(setAllSlots(data.allSlots || []));
+          dispatch(setStep("time"));
+        } else {
+          dispatch(
+            setAvailabilityError(data.error || "Failed to load available times")
+          );
+          dispatch(setAvailableSlots([]));
+          dispatch(setAllSlots([]));
+        }
+      } catch {
+        dispatch(
+          setAvailabilityError(
+            "Failed to load available times. Please try again."
+          )
+        );
+        dispatch(setAvailableSlots([]));
+        dispatch(setAllSlots([]));
+      } finally {
+        dispatch(setIsLoadingSlots(false));
+      }
+    };
+
+    load(selectedDate);
+  }, [selectedDate, dispatch]);
+
+  // (Availability is loaded via useEffect when selectedDate changes)
 
   const handleTimeSelect = (time: string) => {
-    setSelectedTime(time);
-    setStep("details");
+    dispatch(setSelectedTime(time));
+    dispatch(setStep("details"));
   };
 
   const formatTimeSlot = (isoString: string) => {
     const date = new Date(isoString);
-    return date.toLocaleTimeString("en-US", {
-      hour: "numeric",
-      minute: "2-digit",
-      hour12: true,
-    });
+    return date
+      .toLocaleTimeString("en-US", {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: true,
+      })
+      .replaceAll("AM", "am")
+      .replaceAll("PM", "pm")
+      .replaceAll(" ", "");
   };
 
   const formatSelectedDateTime = () => {
@@ -135,8 +156,8 @@ export default function CalendarBooking({
 
   const handleFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setIsBooking(true);
-    setError("");
+    dispatch(setIsBooking(true));
+    dispatch(setFormError(""));
 
     try {
       const response = await fetch("/api/calendar/book", {
@@ -158,21 +179,12 @@ export default function CalendarBooking({
       if (data.success) {
         onBookingSuccess();
       } else {
-        setError(data.error || "Failed to book appointment");
+        dispatch(setFormError(data.error || "Failed to book appointment"));
       }
     } catch {
-      setError("Failed to book appointment. Please try again.");
+      dispatch(setFormError("Failed to book appointment. Please try again."));
     } finally {
-      setIsBooking(false);
-    }
-  };
-
-  const handleBack = () => {
-    if (step === "details") {
-      setStep("time");
-    } else if (step === "time") {
-      setStep("date");
-      setAvailableSlots([]);
+      dispatch(setIsBooking(false));
     }
   };
 
@@ -231,44 +243,46 @@ export default function CalendarBooking({
         </div>
       </div>
 
-      {error && (
+      {formError && (
         <div className="bg-red-50 dark:bg-red-900 border border-red-200 dark:border-red-800 text-red-700 dark:text-red-200 px-4 py-3 rounded-md mb-6">
-          {error}
+          {formError}
         </div>
       )}
 
-      {/* Step 1: Date Selection */}
-      {step === "date" && (
-        <div>
+      {/* Always-visible calendar + times layout */}
+      <div className="grid grid-cols-8 gap-6 mb-6">
+        {/* Left: Date picker (~3/8 on lg and up, full-width on small) */}
+        <div className="col-span-8 lg:col-span-3 border rounded-2xl p-4 shadow-sm dark:shadow-gray-50">
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Select a date for your appointment
           </label>
-          <Input
-            type="date"
-            value={selectedDate}
-            min={today}
-            max={maxDateString}
-            onChange={(e) => handleDateChange(e.target.value)}
-            className="rounded-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 placeholder-gray-600 dark:placeholder-gray-400 focus:border-sky-400 focus:ring-sky-400/40 transition-colors"
-            disabled={isLoadingSlots}
+          <Calendar
+            selected={
+              selectedDate
+                ? ((): Date => {
+                    const [y, m, d] = selectedDate.split("-").map(Number);
+                    return new Date(y, m - 1, d);
+                  })()
+                : undefined
+            }
+            onSelect={(date: Date) => {
+              if (!date) return;
+              // build local YYYY-MM-DD instead of using toISOString()
+              const y = date.getFullYear();
+              const m = String(date.getMonth() + 1).padStart(2, "0");
+              const d = String(date.getDate()).padStart(2, "0");
+              const iso = `${y}-${m}-${d}`;
+              dispatch(setSelectedDate(iso));
+            }}
+            className="bg-white text-gray-700 dark:bg-gray-800 dark:text-gray-300 rounded-md mx-auto"
+            captionLayout="dropdown"
+            mode="single"
+            required
           />
-          <p className="text-sm text-gray-600 dark:text-gray-400 mt-2">
-            💼 Appointments are available Monday through Friday only
-          </p>
-          {isLoadingSlots && (
-            <div className="flex items-center justify-center py-4">
-              <LoadingSpinner />
-              <span className="ml-2 text-sm text-gray-600 dark:text-gray-400">
-                Loading available times...
-              </span>
-            </div>
-          )}
         </div>
-      )}
 
-      {/* Step 2: Time Selection */}
-      {step === "time" && (
-        <div>
+        {/* Right: Times list (~5/8 on lg and up, full-width on small) */}
+        <div className="col-span-8 lg:col-span-5 border rounded-2xl p-4 shadow-sm dark:shadow-gray-50">
           <div className="flex items-center justify-between mb-4">
             <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
               Available times for{" "}
@@ -283,26 +297,34 @@ export default function CalendarBooking({
                 });
               })()}
             </h3>
-            <button
-              onClick={handleBack}
-              className="text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 font-medium"
-            >
-              ← Back
-            </button>
           </div>
 
-          {allSlots.length === 0 ? (
+          {isLoadingSlots ? (
+            <div className="flex flex-col items-center justify-center py-8">
+              <LoadingSpinner />
+              <span className="mt-3 text-sm text-gray-600 dark:text-gray-400">
+                Loading available times...
+              </span>
+              {availabilityError && (
+                <div className="mt-4 bg-amber-50 dark:bg-amber-900 border border-amber-200 dark:border-amber-800 rounded-md p-3">
+                  <p className="text-sm text-amber-800 dark:text-amber-200">
+                    {availabilityError}
+                  </p>
+                </div>
+              )}
+            </div>
+          ) : availabilityError ? (
+            <div className="mb-4 p-3 bg-amber-50 dark:bg-amber-900 border border-amber-200 dark:border-amber-800 rounded-md">
+              <p className="text-sm text-amber-800 dark:text-amber-200">
+                {availabilityError}
+              </p>
+            </div>
+          ) : allSlots.length === 0 ? (
             <div className="text-center py-8">
               <HiOutlineClock className="w-12 h-12 text-gray-400 mx-auto mb-4" />
               <p className="text-gray-600 dark:text-gray-400">
                 No time slots found for this date.
               </p>
-              <button
-                onClick={handleBack}
-                className="mt-4 text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 font-medium"
-              >
-                Choose another date
-              </button>
             </div>
           ) : (
             <div>
@@ -331,8 +353,8 @@ export default function CalendarBooking({
                 </div>
               </div>
 
-              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-3">
-                {allSlots.map((slot, index) => (
+              <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-1">
+                {allSlots.map((slot: TimeSlot, index: number) => (
                   <button
                     key={index}
                     onClick={
@@ -341,7 +363,7 @@ export default function CalendarBooking({
                         : undefined
                     }
                     disabled={!slot.available}
-                    className={`p-3 border rounded-md transition text-center font-medium ${
+                    className={`p-3 border rounded-md transition text-center font-medium text-xs ${
                       slot.available
                         ? "border-green-300 dark:border-green-600 bg-green-50 dark:bg-green-900 text-green-700 dark:text-green-300 hover:border-green-500 hover:bg-green-100 dark:hover:bg-green-800 cursor-pointer"
                         : "border-red-200 dark:border-red-800 bg-red-50 dark:bg-red-900 text-red-500 dark:text-red-400 cursor-not-allowed opacity-60"
@@ -355,11 +377,11 @@ export default function CalendarBooking({
             </div>
           )}
         </div>
-      )}
+      </div>
 
       {/* Step 3: Contact Details */}
       {step === "details" && (
-        <div>
+        <div className="border rounded-2xl p-4 shadow-sm dark:shadow-gray-50">
           <div className="flex items-center justify-between mb-6">
             <div>
               <h3 className="text-lg font-medium text-gray-900 dark:text-gray-100">
@@ -369,12 +391,6 @@ export default function CalendarBooking({
                 {formatSelectedDateTime()}
               </p>
             </div>
-            <button
-              onClick={handleBack}
-              className="text-sky-600 dark:text-sky-400 hover:text-sky-700 dark:hover:text-sky-300 font-medium"
-            >
-              ← Back
-            </button>
           </div>
 
           <form onSubmit={handleFormSubmit} className="space-y-4">
@@ -387,7 +403,7 @@ export default function CalendarBooking({
                 required
                 value={formData.name}
                 onChange={(e) =>
-                  setFormData({ ...formData, name: e.target.value })
+                  dispatch(setFormData({ name: e.target.value }))
                 }
                 className="rounded-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 placeholder-gray-600 dark:placeholder-gray-400 focus:border-sky-400 focus:ring-sky-400/40 transition-colors"
                 placeholder="Enter your full name"
@@ -403,7 +419,7 @@ export default function CalendarBooking({
                 required
                 value={formData.email}
                 onChange={(e) =>
-                  setFormData({ ...formData, email: e.target.value })
+                  dispatch(setFormData({ email: e.target.value }))
                 }
                 className="rounded-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 placeholder-gray-600 dark:placeholder-gray-400 focus:border-sky-400 focus:ring-sky-400/40 transition-colors"
                 placeholder="Enter your email address"
@@ -419,7 +435,7 @@ export default function CalendarBooking({
                 required
                 value={formData.phone}
                 onChange={(e) =>
-                  setFormData({ ...formData, phone: e.target.value })
+                  dispatch(setFormData({ phone: e.target.value }))
                 }
                 className="rounded-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 placeholder-gray-600 dark:placeholder-gray-400 focus:border-sky-400 focus:ring-sky-400/40 transition-colors"
                 placeholder="Enter your phone number"
@@ -434,10 +450,11 @@ export default function CalendarBooking({
                 <Select
                   value={formData.meetingType}
                   onValueChange={(value) =>
-                    setFormData({
-                      ...formData,
-                      meetingType: value as "" | "in-person" | "virtual",
-                    })
+                    dispatch(
+                      setFormData({
+                        meetingType: value as "" | "in-person" | "virtual",
+                      })
+                    )
                   }
                   required
                 >
