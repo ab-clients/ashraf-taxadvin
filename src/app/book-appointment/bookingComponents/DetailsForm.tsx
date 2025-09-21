@@ -12,6 +12,7 @@ import {
   SelectGroup,
 } from "@/components/ui/select";
 import {
+  resetBooking,
   setBookingComplete,
   setFormData,
   setFormError,
@@ -22,6 +23,11 @@ import LoadingSpinner from "@/components/ui/LoadingSpinner";
 import { flippers } from "@/data/appData/flippers";
 import { useDispatch, useSelector } from "react-redux";
 import { AppDispatch, RootState } from "@/store";
+import {
+  allServices,
+  businessServices,
+  individualServices,
+} from "@/data/services/allServicesData";
 
 export default function DetailsForm() {
   const dispatch = useDispatch<AppDispatch>();
@@ -34,7 +40,10 @@ export default function DetailsForm() {
     step,
     isLoadingSlots,
     availabilityError,
+    serviceSlug,
   } = useSelector((state: RootState) => state.booking);
+
+  const serviceTitle = allServices.find((s) => s.slug === serviceSlug)?.title;
 
   const handleChange = (patch: Partial<BookingFormData>) => {
     dispatch(setFormData(patch));
@@ -57,12 +66,14 @@ export default function DetailsForm() {
           email: formData.email,
           phone: formData.phone,
           meetingType: formData.meetingType,
+          serviceSlug: formData.serviceSlug,
         }),
       });
 
       const data = await response.json();
 
       if (data.success) {
+        dispatch(resetBooking());
         dispatch(setBookingComplete(true));
       } else {
         dispatch(setFormError(data.error || "Failed to book appointment"));
@@ -118,7 +129,6 @@ export default function DetailsForm() {
             placeholder="Enter your full name"
           />
         </div>
-
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Email Address *
@@ -132,7 +142,6 @@ export default function DetailsForm() {
             placeholder="Enter your email address"
           />
         </div>
-
         <div>
           <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
             Phone Number *
@@ -146,7 +155,6 @@ export default function DetailsForm() {
             placeholder="Enter your phone number"
           />
         </div>
-
         {flippers.enableCalendarBookingMeetingType && (
           <div>
             <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
@@ -181,6 +189,75 @@ export default function DetailsForm() {
           </div>
         )}
 
+        <div>
+          <label className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
+            Service
+          </label>
+          <Select
+            value={serviceSlug || formData.serviceSlug || ""}
+            onValueChange={(value) =>
+              handleChange({
+                serviceSlug: value as BookingFormData["serviceSlug"],
+              })
+            }
+            required={false}
+          >
+            <SelectTrigger
+              id="serviceSlug"
+              className="rounded-md bg-white dark:bg-gray-900 border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-gray-100 placeholder-gray-600 dark:placeholder-gray-400 focus:border-sky-400 focus:ring-sky-400/40 transition-colors"
+            >
+              <SelectValue
+                placeholder="Select Service"
+                className="text-gray-600 dark:text-gray-400"
+              />
+            </SelectTrigger>
+            <SelectContent className="bg-white dark:bg-gray-900 border border-gray-200 dark:border-gray-700 shadow-lg rounded-md mt-1 p-0">
+              <SelectGroup>
+                <SelectLabel className="text-emerald-700 dark:text-emerald-400">
+                  Individual Services
+                </SelectLabel>
+                <SelectItem
+                  className="pl-4 text-gray-900 dark:text-gray-100 hover:bg-sky-50 dark:hover:bg-sky-800/40 px-4 py-2 rounded"
+                  key="general-consultation-individual"
+                  value="general-consultation-individual"
+                >
+                  General Consultation (Individual)
+                </SelectItem>
+                {individualServices.map((service) => (
+                  <SelectItem
+                    className="pl-4 text-gray-900 dark:text-gray-100 hover:bg-sky-50 dark:hover:bg-sky-800/40 px-4 py-2 rounded"
+                    key={service.slug}
+                    value={service.slug}
+                  >
+                    {service.title}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+              <SelectGroup>
+                <SelectLabel className="text-blue-600 dark:text-blue-400">
+                  Business Services
+                </SelectLabel>
+                <SelectItem
+                  className="pl-4 text-gray-900 dark:text-gray-100 hover:bg-sky-50 dark:hover:bg-sky-800/40 px-4 py-2 rounded"
+                  key="general-consultation-business"
+                  value="general-consultation-business"
+                >
+                  General Consultation (Business)
+                </SelectItem>
+                {businessServices.map((service) => (
+                  <SelectItem
+                    className="pl-4 text-gray-900 dark:text-gray-100 hover:bg-sky-50 dark:hover:bg-sky-800/40 px-4 py-2 rounded"
+                    key={service.slug}
+                    value={service.slug}
+                  >
+                    {service.title}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+        </div>
+
         <div className="bg-sky-50 dark:bg-sky-900 p-4 rounded-md">
           <h4 className="font-medium text-gray-900 dark:text-gray-100 mb-2">
             What to expect:
@@ -192,7 +269,6 @@ export default function DetailsForm() {
             <li>• Calendar invitation will be sent separately</li>
           </ul>
         </div>
-
         <button
           type="submit"
           disabled={isBooking}

@@ -11,6 +11,7 @@ export interface BookingFormData {
   email: string;
   phone: string;
   meetingType: "" | "in-person" | "virtual";
+  serviceSlug?: string;
 }
 
 interface BookingState {
@@ -26,6 +27,7 @@ interface BookingState {
   availabilityError: string;
   formError: string;
   step: "date" | "time" | "details";
+  serviceSlug?: string;
 }
 
 const getTomorrowString = () => {
@@ -107,6 +109,12 @@ const bookingSlice = createSlice({
     setStep(state: BookingState, action: PayloadAction<BookingState["step"]>) {
       state.step = action.payload;
     },
+    setServiceSlug(
+      state: BookingState,
+      action: PayloadAction<string | undefined>
+    ) {
+      state.serviceSlug = action.payload;
+    },
     resetBooking(state: BookingState) {
       state.selectedTime = "";
       state.availableSlots = [];
@@ -120,6 +128,7 @@ const bookingSlice = createSlice({
       state.formError = "";
       state.step = "date";
       state.selectedDate = getTomorrowString();
+      state.serviceSlug = undefined;
     },
   },
 });
@@ -137,6 +146,7 @@ export const {
   setShowBookingForm,
   setBookingComplete,
   setStep,
+  setServiceSlug,
   resetBooking,
 } = bookingSlice.actions;
 

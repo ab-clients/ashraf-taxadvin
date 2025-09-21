@@ -6,6 +6,7 @@ import {
   businessServices,
   individualServices,
 } from "@/data/services/allServicesData";
+import { ServiceConsultationButton } from "../ServiceConsultationButton";
 
 interface PageProps {
   params: Promise<{ slug: string }>;
@@ -144,7 +145,7 @@ export default async function ServiceDetailPage({ params }: PageProps) {
                 href="/book-appointment"
                 className={`inline-flex items-center px-6 py-3 ${colors.button} text-white rounded-lg transition-colors font-semibold`}
               >
-                Schedule Consultation
+                <ServiceConsultationButton serviceSlug={service.slug} />
               </Link>
               <Link
                 href="/contact"

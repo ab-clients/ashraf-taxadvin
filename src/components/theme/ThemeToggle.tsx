@@ -3,6 +3,7 @@
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
 import { Moon, Sun } from "lucide-react";
+import { Switch } from "../ui/switch";
 
 export default function ThemeToggle() {
   const [mounted, setMounted] = useState(false);
@@ -22,9 +23,13 @@ export default function ThemeToggle() {
       onClick={() => setTheme(theme === "dark" ? "light" : "dark")}
     >
       {theme === "light" ? (
-        <Moon className="w-4 text-gray-900 dark:text-gray-100" />
+        <span className="flex items-center align-middle space-x-2 gap-2 text-gray-900 dark:text-gray-100">
+          <Moon className="w-4" /> Dark Mode
+        </span>
       ) : (
-        <Sun className="w-4 text-gray-900 dark:text-gray-100" />
+        <span className="flex items-center align-middle space-x-2 gap-2 text-gray-900 dark:text-gray-100">
+          <Sun className="w-4" /> Light Mode
+        </span>
       )}
     </button>
   );

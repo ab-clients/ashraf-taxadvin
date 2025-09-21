@@ -1,3 +1,4 @@
+import { allServices } from "@/data/services/allServicesData";
 import { google } from "googleapis";
 import { NextRequest, NextResponse } from "next/server";
 
@@ -7,12 +8,15 @@ interface BookingRequest {
   email: string;
   phone: string;
   meetingType: "" | "in-person" | "virtual";
+  serviceSlug?: string;
 }
 
 export async function POST(request: NextRequest) {
   try {
     const body: BookingRequest = await request.json();
-    const { dateTime, name, email, phone, meetingType } = body;
+    const { dateTime, name, email, phone, meetingType, serviceSlug } = body;
+
+    const service = allServices.find((s) => s.slug === serviceSlug);
 
     // Validate required fields
     if (!dateTime || !name || !email || !phone || !meetingType) {
@@ -77,6 +81,8 @@ Client Information:
 - Email: ${email}
 - Phone: ${phone}
 - Meeting Type: ${meetingType === "in-person" ? "In Person" : "Virtual (Google Meet)"}
+- Service: ${service ? service.title : "Not specified"}
+- Service Description: ${service ? service.description : "N/A"}
 
 This is a 30-minute consultation appointment booked through the TaxAdvin website.
 
@@ -90,15 +96,8 @@ Note: Client will need to be contacted separately to send calendar invitation.
         dateTime: endTime.toISOString(),
         timeZone: timezone,
       },
-      // Remove attendees to avoid permission issues
-      // attendees: [
-      //   {
-      //     email: email,
-      //     displayName: name,
-      //   },
-      // ],
       reminders: {
-        useDefault: true, // Use default reminders for the calendar owner
+        useDefault: true,
       },
     };
 
@@ -106,7 +105,7 @@ Note: Client will need to be contacted separately to send calendar invitation.
     const response = await calendar.events.insert({
       calendarId: calendarId,
       requestBody: event,
-      sendUpdates: "all", // Don't send email invitations
+      sendUpdates: "all",
     });
 
     // Create grace period event (15 minutes after the main appointment)

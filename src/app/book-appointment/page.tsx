@@ -14,7 +14,7 @@ import FeaturesPreview from "@/app/book-appointment/FeaturesPreview";
 export default function BookAppointmentPage() {
   const dispatch = useDispatch<AppDispatch>();
   const { showBookingForm, bookingComplete } = useSelector(
-    (s: RootState) => s.booking
+    (state: RootState) => state.booking
   );
 
   const handleStartBooking = () => {
