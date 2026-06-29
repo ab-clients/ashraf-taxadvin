@@ -90,16 +90,16 @@ export const Footer = () => {
         {/* Bottom Section - Centered Text */}
         <div className="text-center text-sm pt-6">
           <p>
-            © 2025 TaxAdvin Financial Services.
+            © 2025 - {new Date().getFullYear()} TaxAdvin Financial Services.
             <br />
-            Developed by{" "}
+            Website by{" "}
             <a
-              href="https://alybadawy.com"
+              href="https://jerseycoder.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-sky-600 dark:text-sky-400 hover:underline"
             >
-              Aly Badawy
+              Jersey Coder
             </a>
             .
           </p>
