@@ -28,7 +28,7 @@ export default function Contact() {
               Book Free Consultation
             </Link>
             <a
-              href="tel:+14077267901"
+              href="tel:+18888668994"
               className="inline-flex items-center justify-center border-2 border-white text-white font-semibold text-lg px-8 py-4 rounded-lg hover:bg-white hover:text-sky-700 transition"
             >
               <HiOutlinePhone className="w-5 h-5 mr-2" />
@@ -93,7 +93,7 @@ export default function Contact() {
                         Phone
                       </p>
                       <p className="text-gray-600 dark:text-gray-400">
-                        (407) 726-7901
+                        (888) 866-8994
                       </p>
                     </div>
                   </div>

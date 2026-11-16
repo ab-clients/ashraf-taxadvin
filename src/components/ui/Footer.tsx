@@ -26,7 +26,7 @@ export const Footer = () => {
             </h3>
             <p className="mb-2 flex items-center gap-2">
               <FaPhoneAlt className="text-sky-600 dark:text-sky-400" />
-              (407) 726-7901
+              (888) 866-8994
             </p>
             <p className="mb-2 flex items-center gap-2">
               <FaEnvelope className="text-sky-600 dark:text-sky-400" />
@@ -99,7 +99,7 @@ export const Footer = () => {
               rel="noopener noreferrer"
               className="text-sky-600 dark:text-sky-400 hover:underline"
             >
-              Jersey Coder
+              JerseyCoder LLC
             </a>
             .
           </p>

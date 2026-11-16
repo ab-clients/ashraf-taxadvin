@@ -47,7 +47,7 @@ export const HeroSection = () => (
       </div>
       <p className="mt-6 max-w-2xl mx-auto text-sm text-sky-200 underline">
         <FaPhone size={16} className="inline-block mr-1" />
-        <a href="tel:+14077267901">(407) 726-7901</a>
+        <a href="tel:+18888668994">(888) 866-8994</a>
         <span className="mx-2">|</span>
         <FaEnvelope size={16} className="inline-block mr-1" />
         <a href="mailto:contact@taxadvin.com">contact@taxadvin.com</a>

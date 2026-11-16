@@ -1,13 +1,13 @@
 export default function TaxAdvinSchema() {
-  const schemaData = {
-    "@context": "https://schema.org",
+  const business = {
     "@type": "AccountingService",
+    "@id": "https://taxadvin.com/#business",
     name: "TaxAdvin Financial Services",
     description:
       "Comprehensive tax and accounting services for individuals, small businesses and nonprofits across Florida – available locally or online.",
     url: "https://taxadvin.com/",
     logo: "https://taxadvin.com/apple-touch-icon.png",
-    telephone: "+1-407-726-7901",
+    telephone: "+1-888-866-8994",
     email: "contact@taxadvin.com",
     address: {
       "@type": "PostalAddress",
@@ -50,6 +50,25 @@ export default function TaxAdvinSchema() {
       "International tax compliance and planning",
       "Succession planning and M&A advisory",
     ],
+  };
+
+  const website = {
+    "@type": "WebSite",
+    "@id": "https://taxadvin.com/#website",
+    url: "https://taxadvin.com/",
+    name: "TaxAdvin Financial Services",
+    about: { "@id": "https://taxadvin.com/#business" },
+    publisher: { "@id": "https://taxadvin.com/#business" },
+    creator: {
+      "@type": "Organization",
+      name: "JerseyCoder LLC",
+      url: "https://jerseycoder.com",
+    },
+  };
+
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": [business, website],
   };
 
   return (

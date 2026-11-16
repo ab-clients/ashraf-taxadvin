@@ -38,7 +38,7 @@ export default function AlternativeContactOptions() {
             Speak with our team directly to schedule your consultation.
           </p>
           <a
-            href="tel:+14077267901"
+            href="tel:+18888668994"
             className="inline-block bg-sky-600 text-white px-6 py-2 rounded-md hover:bg-sky-700 transition font-medium"
           >
             Call Now
