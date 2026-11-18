@@ -32,14 +32,14 @@ export default function CookieConsent() {
       aria-label="Cookie notice"
       className="fixed inset-x-0 bottom-0 z-[100] p-2 sm:p-3"
     >
-      <div className="mx-auto max-w-5xl rounded-xl border border-sky-200 dark:border-sky-900 bg-sky-50 dark:bg-slate-900 shadow-2xl px-4 py-3 flex flex-col sm:flex-row sm:items-center gap-3">
+      <div className="mx-auto max-w-5xl rounded-xl border border-indigo-300 dark:border-indigo-700 bg-indigo-100 dark:bg-indigo-950 shadow-2xl px-4 py-3 flex flex-col sm:flex-row sm:items-center gap-3">
         <p className="flex-1 text-xs sm:text-sm text-gray-700 dark:text-gray-300 leading-snug">
           We use cookies, including <strong>Google Analytics</strong> and{" "}
           <strong>Google Ads</strong>, to understand site usage and measure ads.
           They&apos;re only turned on if you accept.{" "}
           <Link
             href="/privacy-policy#cookies"
-            className="text-sky-600 dark:text-sky-400 underline whitespace-nowrap"
+            className="text-indigo-700 dark:text-indigo-300 underline whitespace-nowrap"
           >
             Learn more
           </Link>
@@ -48,14 +48,14 @@ export default function CookieConsent() {
           <button
             type="button"
             onClick={() => choose("declined")}
-            className="rounded-md border border-gray-300 dark:border-gray-600 px-3 py-1.5 text-sm font-medium text-gray-800 dark:text-gray-200 hover:bg-white dark:hover:bg-slate-800"
+            className="rounded-md border border-gray-300 dark:border-gray-600 px-3 py-1.5 text-sm font-medium text-gray-800 dark:text-gray-200 hover:bg-white dark:hover:bg-indigo-900"
           >
             Decline
           </button>
           <button
             type="button"
             onClick={() => choose("accepted")}
-            className="rounded-md bg-sky-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-sky-700"
+            className="rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700"
           >
             Accept
           </button>
