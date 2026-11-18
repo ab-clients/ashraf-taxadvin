@@ -8,6 +8,7 @@ import { Footer } from "@/components/ui/Footer";
 import TaxAdvinSchema from "@/components/TaxAdvinSchema";
 import { Seal } from "@/components/pages/home/Seal";
 import { ReduxProvider } from "@/store/ReduxProvider";
+import CookieConsent from "@/components/CookieConsent";
 import { GeistSans } from "geist/font/sans";
 
 export const metadata: Metadata = {
@@ -101,13 +102,14 @@ export default function RootLayout({
     >
       <head>
         <TaxAdvinSchema />
-        <GoogleAnalytics />
         <meta
           name="viewport"
           content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
         />
       </head>
       <body className="!overflow-x-hidden">
+        <GoogleAnalytics />
+        <CookieConsent />
         <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <AOSProvider>
             <ReduxProvider>

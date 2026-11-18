@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FaPhoneAlt, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import CookieSettingsButton from "@/components/CookieSettingsButton";
 import logo from "@/assets/images/taxadvin-logo.png";
 
 export const Footer = () => {
@@ -91,6 +92,16 @@ export const Footer = () => {
         <div className="text-center text-sm pt-6">
           <p>
             © 2025 - {new Date().getFullYear()} TaxAdvin Financial Services.
+            <br />
+            <Link href="/privacy-policy" className="hover:underline">
+              Privacy Policy
+            </Link>
+            {" · "}
+            <Link href="/terms-of-service" className="hover:underline">
+              Terms of Service
+            </Link>
+            {" · "}
+            <CookieSettingsButton className="hover:underline" />
             <br />
             Website by{" "}
             <a
